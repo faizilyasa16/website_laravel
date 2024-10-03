@@ -21,7 +21,7 @@
 <body data-bs-theme="dark">
     <div class="bg-secondary w-100 d-flex align-items-center justify-content-between" style="height: 100px;">
         <ul class="d-flex align-items-center list-unstyled m-0 w-100">
-            <li class="me-auto">
+            <li class="me-auto ms-xxl-3 ms-md-0">
                 <img src="img/kucing.png" alt="Gambar Kucing" style="width: 150px;">
             </li>
             <li class="d-flex ms-auto me-5 position-relative">
@@ -38,35 +38,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-auto min-vh-100 bg-secondary">
-                <div class="pt-4 pb-1 px-2">
-                    <a href="#" class="text-white text-decoration-none">
-                        <i class="fa-solid fs-2 bi-bar-chart-fill me-2"></i>
-                        <span class="fs-4 d-none d-lg-inline">Dashboard</span>
-                    </a>
-                </div>
                 <hr class="text-white">
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                            <i class="fa-solid fa-house me-2"></i>
+                            <i class="fa-solid fa-house me-xxl-2"></i>
                             <span class="fs-5 d-none d-lg-inline">Home</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid fa-info-circle me-2"></i>
-                            <span class="fs-5 d-none d-lg-inline">About</span>
+                            <i class="fa-solid fa-chart-line me-xxl-2"></i>
+                            <span class="fs-5 d-none d-lg-inline">Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid bi-people-fill me-2"></i>
+                            <i class="fa-solid bi-people-fill me-xxl-2"></i>
                             <span class="fs-5 d-none d-lg-inline">Recruit</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid fa-address-book me-2"></i>
+                            <i class="fa-solid fa-info-circle me-xxl-2"></i>
+                            <span class="fs-5 d-none d-lg-inline">About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white mt-3">
+                            <i class="fa-solid fa-address-book me-xxl-2"></i>
                             <span class="fs-5 d-none d-lg-inline">Contact</span>
                         </a>
                     </li>

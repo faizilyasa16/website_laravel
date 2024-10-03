@@ -35,7 +35,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route('home'));
         }
-    
+        
         Log::warning('Login failed for user: ' . $request->username);
         return back()->with('error', 'Login Failed!'
             . ' Please check your username and password and try again.');

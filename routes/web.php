@@ -32,7 +32,9 @@ Route::get('tugas', [HelloController::class, 'tugas']);
 Route::get('tugas2', [HelloController::class, 'tugas2']);
 Route::resource('anggota', AnggotaController::class);
 
-Route::get('home', [HomeController::class, 'homeBackEnd'])->name('home')->middleware('auth');
+
+Route::get('home', [HomeController::class, 'homeBackEnd'])->name('home');
+
 Route::get('login', [LoginController::class, 'loginBackEnd'])->name('backend.login');
 Route::post('login', [LoginController::class, 'authenticateBackEnd'])->name('backend.login');
 Route::post('logout', [LoginController::class, 'logoutBackEnd'])->name('backend.logout');
