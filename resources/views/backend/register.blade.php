@@ -86,7 +86,7 @@
         </div>
         <div class="mx-auto d-flex flex-column flex-md-row justify-content-md-center mt-4" style="width: 40%;">
             <a href="{{ route('backend.login') }}" class="btn btn-secondary">Cancel</a>
-            <button type="submit" class="btn btn-primary ms-auto">Login</button> 
+            <button type="submit" class="btn btn-primary ms-auto">Register</button> 
         </div>
     </form>
     

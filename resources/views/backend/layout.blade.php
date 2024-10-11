@@ -16,13 +16,20 @@
         .nav-link:hover {
             background-color: #343a40;
         }
+        .bg-primary-dark {
+            background-color: #1C2655;
+        }
+        .bg-primary-dark-bit{
+            background-color: #222C65;
+        }
     </style>
 </head>
 <body data-bs-theme="dark">
-    <div class="bg-secondary w-100 d-flex align-items-center justify-content-between" style="height: 100px;">
+    <div class="bg-secondary-subtle w-100 d-flex align-items-center justify-content-between" style="height: 100px;">
         <ul class="d-flex align-items-center list-unstyled m-0 w-100">
             <li class="me-auto ms-xxl-3 ms-md-0">
-                <img src="img/kucing.png" alt="Gambar Kucing" style="width: 150px;">
+                <div class="position-fixed bg-success" style="width: 5px; height: 50px; top: 25px; left: 10px;"></div>
+                <h2 class="ms-xxl-1 ms-md-3">Hi, {{ Auth::user()->username }}</h2>
             </li>
             <li class="d-flex ms-auto me-5 position-relative">
                 <a href="#" class="text-white dropdown-toggle d-flex align-items-center" id="dropdownMenuButton" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,41 +44,50 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-auto min-vh-100 bg-secondary">
+            <div class="col-auto bg-primary-dark" style="min-height: 89vh; width: 100px; overflow: hidden;">
                 <hr class="text-white">
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active">
-                            <i class="fa-solid fa-house me-xxl-2"></i>
-                            <span class="fs-5 d-none d-lg-inline">Home</span>
+                    <li class="nav-item text-center">
+                        <a href="#" class="text-white active text-center">
+                            <span class="nav-link  icon-wrapper bg-primary-dark-bit border border-white rounded-2 d-flex justify-content-center align-items-center mx-auto" style="width: 40px; height: 40px;">
+                                <i class=" text-white fa-solid bi-house-door-fill"></i>
+                            </span>
+                            <span class="fs-6 mt-2 mb-3  d-inline-block link-underline link-underline-opacity-0">Home</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid fa-chart-line me-xxl-2"></i>
-                            <span class="fs-5 d-none d-lg-inline">Dashboard</span>
+                
+                    <li class="nav-item text-center">
+                        <a href="#" class="text-white text-center">
+                            <span class="nav-link  icon-wrapper bg-primary-dark-bit  rounded-2 d-flex justify-content-center align-items-center mx-auto" style="width: 40px; height: 40px;">
+                                <i class=" text-white fa-solid fa-info"></i>
+                            </span>
+                            <span class="fs-6 mt-2 mb-3 d-inline-block link-underline link-underline-opacity-0">About</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid bi-people-fill me-xxl-2"></i>
-                            <span class="fs-5 d-none d-lg-inline">Recruit</span>
+                
+                    <li class="nav-item text-center">
+                        <a href="#" class="text-white text-center">
+                            <span class="nav-link bg-primary-dark-bit  icon-wrapper rounded-2 d-flex justify-content-center align-items-center mx-auto" style="width: 40px; height: 40px;">
+                                <i class=" text-white fa-solid fa-building"></i>
+                            </span>
+                            <span class="mt-2 mb-3 d-inline-block link-underline link-underline-opacity-0" style="font-size: 0.7rem;">Company</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid fa-info-circle me-xxl-2"></i>
-                            <span class="fs-5 d-none d-lg-inline">About</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white mt-3">
-                            <i class="fa-solid fa-address-book me-xxl-2"></i>
-                            <span class="fs-5 d-none d-lg-inline">Contact</span>
+                
+                    <li class="nav-item text-center">
+                        <a href="#" class="text-white text-center">
+                            <span class="nav-link bg-primary-dark-bit icon-wrapper rounded-2 d-block d-flex justify-content-center align-items-center mx-auto" style="width: 40px; height: 40px;">
+                                <i class="text-white fa-solid fa-user"></i>
+                            </span>
+                            <span class="mt-2 mb-3 d-inline-block link-underline link-underline-opacity-0" style="font-size: 0.8rem;">Recruit</span>
                         </a>
                     </li>
                 </ul>
+                
             </div>
+        </div>
+    </div>
+    
 
             <div class="col">
                 @yield('content')
