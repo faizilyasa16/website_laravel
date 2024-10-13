@@ -10,7 +10,7 @@ class HomeController extends Controller
     {
         // kalo maksain login 
         if (Auth::check()) {
-            return view('backend.homebackend',[
+            return view('backend.content1',[
                 'title' => 'Home Page',
             ]);
         } else {
