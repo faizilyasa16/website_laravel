@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css\Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css\Bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
     
@@ -19,12 +19,13 @@
         <input type="text" name="hp" id="HP" value="{{ $anggota->hp }}"></label>
 
         <br>
+        <br>
             <button type="submit" class="btn btn-primary">Perbarui</button>
             <a href="{{ route('anggota.index') }}">
-                <button type="button" class="btn btn-danger">Batal</button">
+                <button type="button" class="btn btn-danger text-decoration-none">Batal</button>
             </a>
     </form>
 
-    <SCript src="css\Bootstrap/js/bootstrap.min.css"></SCript>
+    <SCript src="{{ asset('css\Bootstrap/js/bootstrap.min.css') }}"></SCript>
 </body>
 </html>

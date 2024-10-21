@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function loginBackEnd()
     {
         return view('backend.login', [
-            'title' => 'Login Page',
+            'title' => 'Login',
         ]);
     }
 

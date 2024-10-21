@@ -41,3 +41,18 @@ Route::post('logout', [LoginController::class, 'logoutBackEnd'])->name('backend.
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('reset_password', [LoginController::class, 'reset_password'])->name('reset_password');
+
+Route::get('/content', function () {
+    return view('backend.content1');
+});
+Route::get('/content2', function () {
+    return view('backend.content2');
+});
+
+Route::get('/content3', function () {
+    return view('backend.content3');
+});
+
+Route::get('/content4', function () {
+    return view('backend.content4');
+});
