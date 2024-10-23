@@ -16,5 +16,9 @@ class HomeController extends Controller
         } else {
             return redirect()->route('backend.login');
         }
+
+
     }
+    
+
 }

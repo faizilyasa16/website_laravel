@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,9 @@ Route::get('reset_password', [LoginController::class, 'reset_password'])->name('
 Route::get('/content', function () {
     return view('backend.content1');
 });
-Route::get('/content2', function () {
-    return view('backend.content2');
-});
+Route::get('/content2', [TableController::class, 'index'])->name('backend.content2');
+Route::delete('/content2/{id}', [TableController::class, 'destroy'])->name('backend.content2.destroy');
+
 
 Route::get('/content3', function () {
     return view('backend.content3');
