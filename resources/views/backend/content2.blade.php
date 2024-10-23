@@ -8,13 +8,15 @@
             <thead>
               <tr>
                 <th colspan="9" style="text-align: center;">
-                  <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query" style="width: 100%; max-width: 1000px;">
+                  <div class="input-group" style="max-width: 1000px;">
+                    <span class="input-group-text bg-warning rounded-start bg-transparent"><a href="#" class="text-white "><i class="bi-search"></i></a></span>
+                    <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                  </div>
                 </th>
                 <th scope="col" class="text-end">
                   <a class="btn btn-primary" href="#" role="button">Tambah Data</a>
                 </th>
               </tr>
-              <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Posisi Dikontrak</th>
@@ -56,12 +58,16 @@
                 <thead>
                   <tr>
                     <th colspan="7" style="text-align: center;">
-                      <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query" style="width: 100%; max-width: 1000px;">
+                      <div class="input-group" style="max-width: 1000px;">
+                        <span class="input-group-text bg-warning rounded-start bg-transparent"><a href="#" class="text-white "><i class="bi-search"></i></a></span>
+                        <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                      </div>
                     </th>
                     <th scope="col" class="text-end">
                       <a class="btn btn-primary" href="#" role="button">Tambah Data</a>
                     </th>
                   </tr>
+                  
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>

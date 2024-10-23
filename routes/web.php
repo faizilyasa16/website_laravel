@@ -7,6 +7,9 @@ use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\pendaftarController;
+use App\Http\Controllers\PerusahaanController;
+use App\Models\Pendaftar;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,10 +53,8 @@ Route::get('/content2', [TableController::class, 'index'])->name('backend.conten
 Route::delete('/content2/{id}', [TableController::class, 'destroy'])->name('backend.content2.destroy');
 
 
-Route::get('/content3', function () {
-    return view('backend.content3');
-});
+Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3');
+Route::delete('/content3/{id}', [pendaftarController::class, 'destroy'])->name('backend.content3.destroy');
 
-Route::get('/content4', function () {
-    return view('backend.content4');
-});
+Route::get('/content4', [PerusahaanController::class, 'index'])->name('backend.content3');
+Route::delete('/content4/{id}', [PerusahaanController::class, 'destroy'])->name('backend.content3.destroy');

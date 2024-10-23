@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SudahKontrak;
 use App\Models\BelumKontrak;
+use App\Models\Pendaftar;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,9 @@ class TableController extends Controller
         // Ambil semua data dari tabel pekerja_belum_memiliki_kontrak
         $data2 = BelumKontrak::all();
 
+
         // Kirim data ke view
-        return view('backend.content2', compact('data', 'data2'));
+        return view('backend.content2', compact('data', 'data2',));
     }
 
     public function destroy($id, $status)
@@ -28,7 +30,10 @@ class TableController extends Controller
             $pekerja = SudahKontrak::findOrFail($id); // Menggunakan model SudahKontrak
         } elseif ($status == 'belum') {
             $pekerja = BelumKontrak::findOrFail($id); // Menggunakan model BelumKontrak
-        } else {
+        } elseif ($status == 'pendaftar') {
+            $pekerja = Pendaftar::findOrFail($id); // Menggunakan model Pendaftar
+        }
+        else {
             return redirect()->route('backend.content2')->with('error', 'Status kontrak tidak valid.');
         }
     

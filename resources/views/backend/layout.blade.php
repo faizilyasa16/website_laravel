@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     <li class="nav-item text-center mt-3">
-                        <a href="/content2" class="text-white text-center">
+                        <a href="/content3" class="text-white text-center">
                             <span class="nav-link icon-wrapper bg-primary-dark-bit rounded-2 d-flex justify-content-center align-items-center mx-auto" style="width: 50px; height: 50px;">
                                 <i class="fs-4 text-white fa-solid bi-briefcase-fill"></i>
                             </span>
