@@ -50,11 +50,23 @@ Route::get('/content', function () {
     return view('backend.content1');
 });
 Route::get('/content2', [TableController::class, 'index'])->name('backend.content2');
-Route::delete('/content2/{id}', [TableController::class, 'destroy'])->name('backend.content2.destroy');
+Route::delete('/content2/{id}/{status}', [TableController::class, 'destroy'])->name('backend.content2.destroy');
+Route::post('/content2/store', [TableController::class, 'store'])->name('backend.content2.store');
+Route::post('/content2/store2', [TableController::class, 'store2'])->name('backend.content2.store2');
+Route::get('/content2/tambah', [TableController::class, 'create'])->name('backend.content2.create');
+Route::get('/content2/tambah2', [TableController::class, 'create2'])->name('backend.content2.create2');
+Route::get('/content2/edit/{id}/{status}', [TableController::class, 'edit'])->name('backend.content2.edit');
+Route::put('/content2/update/{id}/{status}', [TableController::class, 'update'])->name('backend.content2.update');
+Route::get('/content2/edit2/{id}/{status}', [TableController::class, 'edit2'])->name('backend.content2.edit2');
+Route::put('/content2/update2/{id}/{status}', [TableController::class, 'update2'])->name('backend.content2.update2');
 
 
 Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3');
 Route::delete('/content3/{id}', [pendaftarController::class, 'destroy'])->name('backend.content3.destroy');
 
-Route::get('/content4', [PerusahaanController::class, 'index'])->name('backend.content3');
-Route::delete('/content4/{id}', [PerusahaanController::class, 'destroy'])->name('backend.content3.destroy');
+Route::get('/content4', [PerusahaanController::class, 'index'])->name('backend.content4');
+Route::delete('/content4/{id}', [PerusahaanController::class, 'destroy'])->name('backend.content4.destroy');
+Route::post('/content4/store', [PerusahaanController::class, 'store'])->name('backend.content4.store');
+Route::get('/content4/tambah', [PerusahaanController::class, 'create'])->name('backend.content4.create');
+Route::get('/content4/edit/{id}', [PerusahaanController::class, 'edit'])->name('backend.content4.edit');
+Route::put('/content4/update/{id}', [PerusahaanController::class, 'update'])->name('backend.content4.update');

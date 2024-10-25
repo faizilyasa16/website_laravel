@@ -6,17 +6,20 @@
         <h3 class="ms-4 mb-1">Pekerja yang Sudah memiliki Kontrak</h1>
         <table class="table table-hover ms-4 text-center" style="width: 80%">
             <thead>
-              <tr>
-                <th colspan="9" style="text-align: center;">
-                  <div class="input-group" style="max-width: 1000px;">
-                    <span class="input-group-text bg-warning rounded-start bg-transparent"><a href="#" class="text-white "><i class="bi-search"></i></a></span>
-                    <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+              <tr class="border">
+                <th scope="col" colspan="10" style="">
+                  <div class="d-flex" style="width: 100%;">
+                    <div class="input-group" style="flex: 1;">
+                      <span class="input-group-text bg-warning rounded-start bg-transparent">
+                        <a href="#" class="text-white"><i class="bi-search"></i></a>
+                      </span>
+                      <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                    </div>
+                    <a class="btn btn-primary ms-2" href="{{ route('backend.content2.create') }}" role="button">Tambah Data</a>
                   </div>
                 </th>
-                <th scope="col" class="text-end">
-                  <a class="btn btn-primary" href="#" role="button">Tambah Data</a>
-                </th>
               </tr>
+              <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Posisi Dikontrak</th>
@@ -42,12 +45,12 @@
                     <td>{{ $row->upah_kontrak }}</td>
                     <td>{{ $row->status }}</td>
                     <td>
-                        <form action="{{ route('backend.content2.destroy', $row->id) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                            <a class="btn btn-primary" href="#" role="button">Edit</a>
-                        </form>
+                      <form action="{{ route('backend.content2.destroy', ['id' => $row->id, 'status' => $row->status]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                        <a class="btn btn-primary" href="{{ route('backend.content2.edit', ['id' => $row->id, 'status' => $row->status]) }}" role="button">Edit</a>
+                    </form>
                     </td>
                     @endforeach
             </tbody>
@@ -56,18 +59,19 @@
             <h3 class="text-start">Pekerja yang Belum memiliki Kontrak</h1>
             <table class="table table-hover mt-1" style="width: 80%">
                 <thead>
-                  <tr>
-                    <th colspan="7" style="text-align: center;">
-                      <div class="input-group" style="max-width: 1000px;">
-                        <span class="input-group-text bg-warning rounded-start bg-transparent"><a href="#" class="text-white "><i class="bi-search"></i></a></span>
-                        <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                  <tr class="border">
+                    <th scope="col" colspan="8" style="">
+                      <div class="d-flex" style="width: 100%;">
+                        <div class="input-group" style="flex: 1;">
+                          <span class="input-group-text bg-warning rounded-start bg-transparent">
+                            <a href="#" class="text-white"><i class="bi-search"></i></a>
+                          </span>
+                          <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                        </div>
+                        <a class="btn btn-primary ms-2" href="{{ route('backend.content2.create2') }}" role="button">Tambah Data</a>
                       </div>
                     </th>
-                    <th scope="col" class="text-end">
-                      <a class="btn btn-primary" href="#" role="button">Tambah Data</a>
-                    </th>
                   </tr>
-                  
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
@@ -87,14 +91,20 @@
                         <td>{{ $row2->posisi_keahlian }}</td>
                         <td>{{ $row2->tanggal_masuk }}</td>
                         <td>{{ $row2->email }}</td>
-                        <td>{{ $row2->cv }}</td>
+                        <td>
+                          @if($row2->cv)
+                          <a href="{{ asset('storage/' . $row2->cv) }}" target="_blank">Lihat CV</a>
+                          @else
+                          Tidak ada CV
+                          @endif
+                        </td>
                         <td>{{ $row2->status }}</td>
                         <td>
-                            <form action="{{ route('backend.content2.destroy', $row2->id) }}" method="post">
-                                @csrf
+                          <form action="{{ route('backend.content2.destroy', ['id' => $row2->id, 'status' => $row2->status]) }}" method="POST">
+                            @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger">Hapus</button>
-                                <a class="btn btn-primary" href="#" role="button">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('backend.content2.edit2', ['id' => $row2->id, 'status' => $row2->status]) }}" role="button">Edit</a>
                             </form>
                         </td>
                         @endforeach

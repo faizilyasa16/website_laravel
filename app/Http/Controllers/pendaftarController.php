@@ -18,20 +18,17 @@ class pendaftarController extends Controller
         return view('backend.content3', compact('data3'));
     }
 
-    public function destroy($id, $status)
+    public function destroy($id)
     {
-        // Tentukan model berdasarkan status kontrak
-        if ($status == 'sudah') {
-            $pekerja = Pendaftar::findOrFail($id); // Menggunakan model SudahKontrak
-        } else {
-            return redirect()->route('backend.content3')->with('error', 'Status kontrak tidak valid.');
-        }
+        // Cari data pekerja berdasarkan ID
+        $pekerja = Pendaftar::findOrFail($id);
     
         // Hapus data pekerja
         $pekerja->delete();
     
         // Redirect kembali ke halaman dengan pesan sukses
-        return redirect()->route('backend.content3')->with('success', 'Pendaftar berhasil dihapus.');
+        return redirect()->route('backend.content3')->with('success', 'Pekerja berhasil dihapus.');
     }
+    
     
 }
