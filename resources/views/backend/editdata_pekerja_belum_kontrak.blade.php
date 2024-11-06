@@ -11,7 +11,7 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h3>Tambah Pekerja yang Sudah memiliki Kontrak</h3>
+                <h3>Edit Data Pekerja yang Sudah memiliki Kontrak</h3>
             </div>
             @if ($errors->any()) 
                 <div class="alert alert-danger">

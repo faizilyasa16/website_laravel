@@ -12,8 +12,6 @@ class pendaftarController extends Controller
     {
         // Ambil semua data dari tabel pekerja_memiliki_kontrak
         $data3 = Pendaftar::all();
-
-
         // Kirim data ke view
         return view('backend.content3', compact('data3'));
     }
