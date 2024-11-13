@@ -44,7 +44,7 @@
     <div class="main-content text-center">
         <h1 class="fs-1 text-dark">Yuk!! Menjadi Bagian Elitra</h1>
         <div class="bg-warning d-block mx-auto" style="height: 4px; width: 30%;"></div>
-        <p class="fs-5 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, quia.</p>
+        <p class="fs-5 mt-2 text-dark">Bergabunglah dengan ElitRa dan ciptakan solusi teknologi yang mendorong transformasi digital.</p>
     </div> 
 
         <!-- Container with col-6 layout -->
@@ -93,56 +93,58 @@
             </div>
         </div>
         <div class="w-100" style="height: 200px; background-color: #222C65;">
-            <div class="container">
-              <div class="row">
-                <div class="col-3">
-                  <img src="{{ asset('img/logo_elitra.png') }}" alt="" style="width: 200px;">
-                </div>
-                <div class="col-3" style="margin-top: 60px">
-                  <h4 class="text-white">Tentang Kami</h4>
-                  <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, voluptatibus.</p>
-                </div>
-                <div class="col-3" style="margin-top: 60px;">
-                    <h4 class="text-white">Follow Us</h4>
-                    <ul class="list-unstyled d-flex m-0 p-0">
-                      <li class="me-3">
-                        <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
-                          <i class="bi bi-facebook"></i>
-                        </a>
-                      </li>
-                      <li class="me-3">
-                        <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
-                          <i class="bi bi-instagram"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
-                          <i class="bi bi-twitter"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                <img src="{{ asset('img/logo_elitra.png') }}" alt="" style="width: 200px;">
+              </div>
+              <div class="col-3" style="margin-top: 20px">
+                <h4 class="text-white">Tentang Kami</h4>
+                <p class="text-white">EIitra adalah layanan outsourcing berbasis software yang fokus pada rekrutmen, mempermudah pencarian pekerjaan dan perekrutan karyawan dengan solusi efisien dan terintegrasi.</p>
+              </div>
+              <div class="col-3" style="margin-top: 20px;">
+                <h4 class="text-white">Follow Us</h4>
+                <ul class="list-unstyled d-flex m-0 p-0">
+                  <li class="me-3">
+                    <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="me-3">
+                    <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              
+              
+              
+              <div class="col-3" style="margin-top: 20px">
+                <h4 class="text-white">Contact Us</h4>
+                <ul class=" list-unstyled m-0">
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-building me-3 text-white"></i>
+                    <p class="text-white mb-0">Jl. Cut Mutia No. 88, Kota Bekasi</p>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-phone me-3 text-white"></i>
+                    <p class="text-white mb-0">+6281234567890</p>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="bi bi-envelope me-3 text-white"></i>
+                    <p class="text-white mb-0">LQl7y@example.com</p>
+                  </li>
                   
-                <div class="col-3" style="margin-top: 60px">
-                  <h4 class="text-white">Contact Us</h4>
-                  <ul class=" list-unstyled m-0">
-                    <li class="d-flex align-items-center">
-                      <i class="bi bi-building me-2 text-white"></i>
-                      <p class="text-white mb-0">Jl. Jend. Sudirman No. 1, Jakarta</p>
-                    </li>
-                    <li class="d-flex align-items-center">
-                      <i class="bi bi-phone me-2 text-white"></i>
-                      <p class="text-white mb-0">+6281234567890</p>
-                    </li>
-                    <li class="d-flex align-items-center">
-                      <i class="bi bi-envelope me-2 text-white"></i>
-                      <p class="text-white mb-0">LQl7y@example.com</p>
-                    </li>
-                    
-                  </ul>
-                </div>
-            </div>
+                </ul>
+              </div>
           </div>
+        </div>
         
 
 

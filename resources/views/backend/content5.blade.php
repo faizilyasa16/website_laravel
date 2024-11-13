@@ -92,10 +92,10 @@
             </div>
 
             <div class="col"> <!-- Main Content now using col-12 -->
-                <div class="fs-3 ms-5 mt-3 d inline-block">
+                <div class="fs-3 ms-2 mt-3 d inline-block">
                     <a href="{{ route('backend.content3.index') }}" class="text-decoration-none text-white"><i class="bi bi-arrow-left">Back</i></a>
                 </div>
-                        <div class="ms-5 mt-2 rounded-4 w-50 bg-secondary p-4">
+                        <div class="ms-5 mt-5 rounded-4 w-50 bg-primary p-4">
                                 <h1>{{ $data->nama }}</h1>
                                 <p>Tanggal Lahir    : {{ $data->tanggal_lahir }}</p>
                                 <p>No. Telepon      : {{ $data->no_telepon }}</p>

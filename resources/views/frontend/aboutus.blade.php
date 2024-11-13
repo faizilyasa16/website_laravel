@@ -46,34 +46,49 @@
                 <img src="{{ asset('img/logo_elitra.png') }}" alt="" class="img-fluid" style="width: 100%; height: auto; border-radius: 15px;">
             </div>
             <h1 class="text-center mt-4">Tentang Kami</h1>
-            <p class="text-center fs-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem dicta omnis doloremque sint animi! Et ea neque delectus dolorum reprehenderit?</p>
+            <p class="text-center fs-5">EIitra adalah layanan outsourcing berbasis software yang fokus pada rekrutmen, mempermudah pencarian pekerjaan dan perekrutan karyawan dengan solusi efisien dan terintegrasi.</p>
             <div class="row mt-5">
                 <div class="col-12 text-center mt-5">
-                    <h4 class="fs-2">Visi & Misi Kami</h4>
-                    <div class="bg-warning mx-auto" style="height: 4px; width: 32%;"></div>
-                  </div>
-                  <div class="d-flex justify-content-between mt-5">
-                    <div class="bg-warning rounded-4">
-                        <h4 class="text-center mt-4">Visi</h4>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis perspiciatis excepturi voluptatibus tenetur. Ad, beatae. Corrupti, facilis accusamus quod, aut deserunt, velit eveniet provident atque ipsam sit quas corporis dolor.</p>
+                    <h4 class="fs-2 fw-bold text-dark">Visi & Misi Kami</h4>
+                    <div class="bg-warning mx-auto" style="height: 4px; width: 40%;"></div>
+                </div>
+                <div class="d-flex justify-content-between mt-5">
+                    <!-- Visi Section -->
+                    <div class="rounded-4 p-4" style="background-color: #222C65; flex: 1;">
+                        <h4 class="text-center text-white fw-semibold mb-3">Visi</h4>
+                        <p class="text-center text-white" style="font-size: 1rem; line-height: 1.6;">
+                            PT ElitRa bertekad untuk menjadi penyedia layanan outsourcing TI terdepan di Indonesia, dikenal atas keunggulan, inovasi, dan kemampuan kami dalam mendukung transformasi digital bagi bisnis di berbagai sektor industri.
+                        </p>
                     </div>
-                    <div class="bg-primary rounded-4 ms-3" >
-                        <h4 class="text-center mt-4">Misi</h4>
-                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nam harum laboriosam quibusdam natus, quod quos eum voluptatem aut velit minima possimus et veniam quas, nisi maiores accusamus quidem explicabo?</p>
+                    <!-- Misi Section -->
+                    <div class="rounded-4 p-4 ms-3" style="background-color: #222C65; flex: 1;">
+                        <h4 class="text-center text-white fw-semibold mb-3">Misi</h4>
+                        <p class="text-center text-white" style="font-size: 1rem; line-height: 1.6;">
+                            Kami menyediakan solusi teknologi inovatif yang disesuaikan dengan kebutuhan klien, mengutamakan keamanan data, serta memastikan kepatuhan terhadap standar global seperti GDPR dan ISO 27001 untuk mendukung tujuan strategis klien.
+                        </p>
                     </div>
                 </div>
             </div>
+            
             <img src="{{ asset('img/alam.jpg') }}" alt="" class="img-fluid mt-5 rounded-5" style="width: 100%; height: 500px; object-fit: cover;">
             <div class="mt-4 ms-2">
-                <h3 class="">Cerita Kami</h3>
-                <div class="bg-warning " style="height: 4px; width: 5%;"></div>
                 <div class="row">
                     <div class="col-6 mt-3">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores rerum blanditiis perspiciatis numquam maxime quam voluptates id fuga pariatur, eaque officiis repudiandae reprehenderit autem cupiditate dignissimos hic, est quia ratione. Eaque ea cum reiciendis temporibus deleniti tempore quas quis ipsam perspiciatis a ut quo corporis laborum magnam quam, aspernatur dignissimos repellat vero? Quisquam incidunt debitis adipisci laudantium cum sunt? At, laborum, beatae magni vero, vel modi expedita adipisci rerum asperiores fugit voluptatibus nihil dolorem ab? Eveniet quidem beatae quas ducimus ad earum fugiat? Officia consequatur non, voluptatem accusantium dolor earum maiores repellat mollitia, quo quaerat ipsa ratione aperiam, tempore porro dolore facere vel iste! Cum eos repellat ipsum exercitationem dolore impedit, eligendi accusamus non, eum illum recusandae nobis aliquid possimus. Modi ipsam quia, quo sed deserunt voluptas quaerat quisquam, placeat error minima cumque architecto! Animi molestiae necessitatibus provident magnam ipsam ut doloremque ab mollitia ratione magni. Aperiam pariatur nemo quas aspernatur quaerat neque ratione, maiores tempore perspiciatis ipsum aliquam alias corporis molestias quidem. Voluptatem, illo doloribus sunt, laudantium incidunt soluta, sit distinctio qui et sapiente expedita cumque nihil asperiores. Perspiciatis eius libero doloribus neque adipisci nam atque id aliquid molestiae illo, laudantium omnis natus veniam corrupti recusandae ratione sunt labore!</p>
+                        <div class="mb-4">
+                            <h3 class="">Cerita Kami</h3>
+                            <div class="bg-warning " style="height: 4px; width: 12%;"></div>
+                        </div>
+                        <div class="fs-5">
+                            <p class="mb-3">Di PT ElitRa, kami bekerja dengan teknologi terkini untuk menyediakan layanan terbaik. Kami ahli dalam AWS, Microsoft Azure, Docker, Kubernetes, dan berbagai alat keamanan siber terdepan guna menjaga sistem klien kami tetap aman dan efisien. Kami selalu mengikuti tren industri untuk memastikan solusi kami siap menghadapi masa depan.</p>
+                            <p>Tim ahli bersertifikasi kami terdiri dari pengembang perangkat lunak, spesialis keamanan siber, insinyur jaringan, dan analis data yang memiliki pengalaman bertahun-tahun di industri ini. Dengan keahlian yang beragam, kami mampu menangani proyek dengan berbagai ukuran dan tingkat kompleksitas, memastikan klien kami mendapatkan solusi dan hasil terbaik.</p>
+                        </div>
                     </div>
                     <div class="col-6 mt-3">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto corrupti alias asperiores, voluptate maiores mollitia vitae laborum, commodi ipsum rem consequatur, accusantium sunt. Rerum minima architecto explicabo temporibus optio aliquid ratione quae ea, fugiat alias, quaerat dignissimos. Dolores laborum asperiores sint sit voluptas cumque ex deserunt perferendis porro quis pariatur, obcaecati vitae dolor, quibusdam fugit accusantium facilis quo! Illum officiis ut culpa ullam minima dolore ex! Obcaecati minima ex labore earum unde. Repellendus ea beatae id voluptas error nihil expedita eum, quasi nemo architecto atque. Earum labore quibusdam facere fugiat debitis cupiditate vel id corporis obcaecati quisquam, repellat voluptatum consequuntur laboriosam, explicabo quae quaerat non excepturi minus dolor. Eum non vel enim consequatur officia sequi exercitationem, asperiores explicabo impedit ex facere vitae optio, veniam amet, minus voluptate atque cupiditate? Blanditiis deserunt aspernatur ut quis quae tempore, ratione nostrum aut itaque aliquam sunt mollitia sint nesciunt. Iure quae sit earum explicabo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique dolore beatae culpa aspernatur non quis dolor totam quasi, in ipsam!</p>
-                        <h3 class="text-center" style="margin-top: 40px;">Layanan Kami</h3>
+                        <div class="fs-5">
+                            <p class="mb-3">Didirikan pada tahun 2024, PT ElitRa adalah penyedia layanan outsourcing TI terkemuka yang bertujuan untuk memberikan solusi teknologi inovatif dan berkualitas tinggi. Tim kami berdedikasi membantu bisnis untuk mengoptimalkan dan mentransformasi operasional TI mereka, sehingga mereka dapat fokus pada hal yang paling penting mengembangkan bisnis inti mereka. </p>
+                            <p>Kami percaya bahwa integritas, perbaikan berkelanjutan, dan komitmen terhadap keunggulan adalah fondasi utama dari setiap layanan yang kami berikan. Di PT Solusi Digital Maju, kami selalu berusaha untuk memberikan layanan yang transparan, jujur, dan dapat dipercaya, sehingga menciptakan hubungan jangka panjang dengan klien kami. </p>
+                        </div>
+                        <h3 class="text-center" style="margin-top: 25px;">Layanan Kami</h3>
                         <div class="bg-warning mx-auto" style="height: 4px; width: 30%;"></div>
                     </div>
                 </div>
@@ -250,7 +265,7 @@
                                     </div>
                                     <div class="col-10">
                                         <p class="text-white text-center mt-1 mb-0">Email</p>
-                                        <p class="text-white text-center fw-bold mt-1 mb-0">lorem@gmail.com</p>
+                                        <p class="text-white text-center fw-bold mt-1 mb-0">LQl7y@example.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -267,7 +282,7 @@
             </div>
             <div class="col-3" style="margin-top: 20px">
               <h4 class="text-white">Tentang Kami</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste autem laborum facilis modi quia! Recusandae, ipsam ea obcaecati repellendus doloremque aut deleniti ut quisquam quia.</p>
+              <p class="text-white">EIitra adalah layanan outsourcing berbasis software yang fokus pada rekrutmen, mempermudah pencarian pekerjaan dan perekrutan karyawan dengan solusi efisien dan terintegrasi.</p>
             </div>
             <div class="col-3" style="margin-top: 20px;">
               <h4 class="text-white">Follow Us</h4>
@@ -297,7 +312,7 @@
               <ul class=" list-unstyled m-0">
                 <li class="d-flex align-items-center">
                   <i class="bi bi-building me-3 text-white"></i>
-                  <p class="text-white mb-0">Jl. Jend. Sudirman No. 1, Jakarta</p>
+                  <p class="text-white mb-0">Jl. Cut Mutia No. 88, Kota Bekasi</p>
                 </li>
                 <li class="d-flex align-items-center">
                   <i class="bi bi-phone me-3 text-white"></i>

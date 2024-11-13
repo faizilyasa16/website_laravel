@@ -53,7 +53,7 @@
                     </div>
     
                     <div class="d-flex justify-content-between">
-                        <a href="{{ route('backend.content2') }}" class="btn btn-secondary">Kembali</a>
+                        <a href="{{ route('backend.content4') }}" class="btn btn-secondary">Kembali</a>
                         <button type="submit" class="btn btn-primary">Edit Data</button>
                     </div>
                 </form>

@@ -144,7 +144,7 @@
 
   <div class="d-flex align-items-center justify-content-center mx-auto" style="margin-top: 50px; width: 100%; ">
     <div style="width: 70%;" class="ms-5">
-        <h2>Berkomitmen Menjadi Penyedia Tenaga Kerja IT Sementara No. 1 di Indonesia</h2>
+        <h2 class="mb-4">Berkomitmen Menjadi Penyedia Tenaga Kerja IT Sementara No. 1 di Indonesia</h2>
         <p>Elitra adalah penyedia lowongan dan tenaga kerja IT di Indonesia Staffing Talenta IT di Indonesia yang fokus pada penyediaan tenaga kerja IT berpengalaman untuk proyek pengembangan perangkat lunak dan transformasi digital. Elitra menawarkan layanan outsourcing talenta IT dengan kontrak jangka pendek mulai dari 3 bulan. Jika Anda membutuhkan informasi lebih lanjut, jangan ragu untuk menghubungi kami. Bersama Elitra, dapatkan talenta IT sementara yang berkualitas serta siap membantu mewujudkan kesuksesan perusahaan Anda.</p>
     </div>
     <img src="{{ asset('img/buatabout.png') }}" alt="" style="width: 30%; margin-left: 100px" class="me-5">
@@ -334,11 +334,11 @@
       <div class="col-3">
         <img src="{{ asset('img/logo_elitra.png') }}" alt="" style="width: 200px;">
       </div>
-      <div class="col-3" style="margin-top: 60px">
+      <div class="col-3" style="margin-top: 20px">
         <h4 class="text-white">Tentang Kami</h4>
-        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, voluptatibus.</p>
+        <p class="text-white">EIitra adalah layanan outsourcing berbasis software yang fokus pada rekrutmen, mempermudah pencarian pekerjaan dan perekrutan karyawan dengan solusi efisien dan terintegrasi.</p>
       </div>
-      <div class="col-3" style="margin-top: 60px;">
+      <div class="col-3" style="margin-top: 20px;">
         <h4 class="text-white">Follow Us</h4>
         <ul class="list-unstyled d-flex m-0 p-0">
           <li class="me-3">
@@ -361,12 +361,12 @@
       
       
       
-      <div class="col-3" style="margin-top: 60px">
+      <div class="col-3" style="margin-top: 20px">
         <h4 class="text-white">Contact Us</h4>
         <ul class=" list-unstyled m-0">
           <li class="d-flex align-items-center">
             <i class="bi bi-building me-3 text-white"></i>
-            <p class="text-white mb-0">Jl. Jend. Sudirman No. 1, Jakarta</p>
+            <p class="text-white mb-0">Jl. Cut Mutia No. 88, Kota Bekasi</p>
           </li>
           <li class="d-flex align-items-center">
             <i class="bi bi-phone me-3 text-white"></i>
@@ -381,7 +381,6 @@
       </div>
   </div>
 </div>
-
 
       
       

@@ -181,44 +181,46 @@
             <div class="col-3">
               <img src="{{ asset('img/logo_elitra.png') }}" alt="" style="width: 200px;">
             </div>
-            <div class="col-3" style="margin-top: 60px">
+            <div class="col-3" style="margin-top: 20px">
               <h4 class="text-white">Tentang Kami</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, voluptatibus.</p>
+              <p class="text-white">EIitra adalah layanan outsourcing berbasis software yang fokus pada rekrutmen, mempermudah pencarian pekerjaan dan perekrutan karyawan dengan solusi efisien dan terintegrasi.</p>
             </div>
-            <div class="col-3" style="margin-top: 60px;">
-                <h4 class="text-white">Follow Us</h4>
-                <ul class="list-unstyled d-flex m-0 p-0">
-                  <li class="me-3">
-                    <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
-                      <i class="bi bi-facebook"></i>
-                    </a>
-                  </li>
-                  <li class="me-3">
-                    <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
-                      <i class="bi bi-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
-                      <i class="bi bi-twitter"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              
-            <div class="col-3" style="margin-top: 60px">
+            <div class="col-3" style="margin-top: 20px;">
+              <h4 class="text-white">Follow Us</h4>
+              <ul class="list-unstyled d-flex m-0 p-0">
+                <li class="me-3">
+                  <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                </li>
+                <li class="me-3">
+                  <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-white" style="display: inline-flex; align-items: center; justify-content: center; background-color: #0d6efd; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            
+            
+            <div class="col-3" style="margin-top: 20px">
               <h4 class="text-white">Contact Us</h4>
               <ul class=" list-unstyled m-0">
                 <li class="d-flex align-items-center">
-                  <i class="bi bi-building me-2 text-white"></i>
-                  <p class="text-white mb-0">Jl. Jend. Sudirman No. 1, Jakarta</p>
+                  <i class="bi bi-building me-3 text-white"></i>
+                  <p class="text-white mb-0">Jl. Cut Mutia No. 88, Kota Bekasi</p>
                 </li>
                 <li class="d-flex align-items-center">
-                  <i class="bi bi-phone me-2 text-white"></i>
+                  <i class="bi bi-phone me-3 text-white"></i>
                   <p class="text-white mb-0">+6281234567890</p>
                 </li>
                 <li class="d-flex align-items-center">
-                  <i class="bi bi-envelope me-2 text-white"></i>
+                  <i class="bi bi-envelope me-3 text-white"></i>
                   <p class="text-white mb-0">LQl7y@example.com</p>
                 </li>
                 
