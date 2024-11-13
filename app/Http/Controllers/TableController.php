@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\karyawanChart;
 use App\Models\SudahKontrak;
 use App\Models\belumKontrak;
 use App\Models\Pendaftar;
@@ -12,19 +13,58 @@ use Illuminate\Support\Facades\Storage;
 
 class TableController extends Controller
 {
-    public function index()
+    public function index(Request $request, KaryawanChart $karyawanChart)
     {
-        // Ambil semua data dari tabel pekerja_memiliki_kontrak
-        $data = SudahKontrak::all();
-
-        // Ambil semua data dari tabel pekerja_belum_memiliki_kontrak
-        $data2 = BelumKontrak::all();
-
-
-        // Kirim data ke view
-        return view('backend.content2', compact('data', 'data2',));
+        // Ambil data query untuk pekerja kontrak dan non-kontrak
+        $queryPekerjaKontrak = $request->input('query_pekerja_kontrak');
+        $queryPekerjaNonKontrak = $request->input('query_pekerja_non_kontrak');
+        
+        // Filter data pekerja dengan kontrak
+        $data['data'] = SudahKontrak::where('status', 'kontrak')
+            ->when($queryPekerjaKontrak, function ($query) use ($queryPekerjaKontrak) {
+                $query->where('nama', 'like', '%' . $queryPekerjaKontrak . '%')
+                      ->orWhere('email', 'like', '%' . $queryPekerjaKontrak . '%');
+            })->get();
+    
+        // Filter data pekerja tanpa kontrak
+        $data['data2'] = BelumKontrak::where('status', '!=', 'kontrak')
+            ->when($queryPekerjaNonKontrak, function ($query) use ($queryPekerjaNonKontrak) {
+                $query->where('nama', 'like', '%' . $queryPekerjaNonKontrak . '%')
+                      ->orWhere('email', 'like', '%' . $queryPekerjaNonKontrak . '%');
+            })->get();
+        
+        // Hitung jumlah pekerja yang sudah kontrak dan belum kontrak
+        // $sudahKontrakCount = SudahKontrak::where('status', 'kontrak')->count();  
+        // $belumKontrakCount = BelumKontrak::where('status', '!=', 'kontrak')->count();  
+        // $pendaftarCount = Pendaftar::count(); 
+        $webDevCount = Pendaftar::where('posisi_dilamar', 'Web Developer')->count();
+        $cyberSecurityCount = Pendaftar::where('posisi_dilamar', 'Cyber Security')->count();
+        $softwareDevCount = Pendaftar::where('posisi_dilamar', 'Software Developer')->count();
+        $uiUxDesignCount = Pendaftar::where('posisi_dilamar', 'UI UX Design')->count();
+    
+        // Hitung jumlah pekerja untuk setiap posisi
+        $webDevCount = Pendaftar::where('posisi_dilamar', 'Web Developer')->count();
+        $cyberSecurityCount = Pendaftar::where('posisi_dilamar', 'Cyber Security')->count();
+        $softwareDevCount = Pendaftar::where('posisi_dilamar', 'Software Developer')->count();
+        $uiUxDesignCount = Pendaftar::where('posisi_dilamar', 'UI UX Design')->count();
+        
+        // Hitung total jumlah pekerja dari semua posisi
+        $totalPekerja = $webDevCount + $cyberSecurityCount + $softwareDevCount + $uiUxDesignCount;
+    
+        // Buat chart karyawan dengan data jumlah pekerja
+        $karyawanChart = $karyawanChart->build($webDevCount, $cyberSecurityCount, $softwareDevCount, $uiUxDesignCount);
+    
+        // Menambahkan data posisi dan total pekerja ke view
+        $data['karyawanChart'] = $karyawanChart;
+        $data['webDevCount'] = $webDevCount;
+        $data['cyberSecurityCount'] = $cyberSecurityCount;
+        $data['softwareDevCount'] = $softwareDevCount;
+        $data['uiUxDesignCount'] = $uiUxDesignCount;
+        $data['totalPekerja'] = $totalPekerja;  // Menambahkan total pekerja
+    
+        // Kembalikan view dengan data yang sudah diproses
+        return view('backend.content2', $data);
     }
-
 
     public function create()
     {

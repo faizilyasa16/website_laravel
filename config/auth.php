@@ -63,6 +63,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+            'table' => 'user', // Ubah menjadi 'user' jika tabelmu bernama 'user'
         ],
 
         // 'users' => [
@@ -90,7 +91,7 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 120, // Set this to a higher value (in minutes) if needed
             'throttle' => 60,
         ],
     ],

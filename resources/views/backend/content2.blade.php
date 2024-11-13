@@ -1,23 +1,105 @@
 @extends('backend.layout')
-
 @section('content')
     <h1 class="m-3">Dashboard</h1>
     <div class="mt-5">
-        <h3 class="ms-4 mb-1">Pekerja yang Sudah memiliki Kontrak</h1>
+      <div class="ms-3 mb-5 text-center">
+        <h2>Pendaftar Elitra</h2>
+        <div class="bg-warning mt-1 mx-auto" style="height: 4px; width: 10%;"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="karyawanChartContainer" class="chart-container mb-5 ms-3 pb-5">      
+            {!! $karyawanChart->container() !!}
+          </div>  
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <!-- Web Developer -->
+            <div class="col-md-6 mb-4">
+              <div class="chart-container ms-3 p-4 border rounded shadow-lg">
+                <div class="d-flex justify-content-center">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="rounded-circle bg-primary" style="height: 20px; width: 20px;"></div>
+                    <h3 class="text-center text-primary mb-0 ms-2">Web Developer</h3>
+                  </div>
+                </div>                
+                <div class="bg-warning mt-3" style="height: 4px; width: 100%;"></div>
+                <h1 class="mt-3 text-center">{{ $webDevCount }}</h1>
+              </div>  
+            </div>
+        
+            <!-- UI/UX Designer -->
+            <div class="col-md-6 mb-4">
+              <div class="chart-container ms-3 p-4 border rounded shadow-lg">
+                <div class="d-flex justify-content-center">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="rounded-circle" style="height: 20px; width: 20px; background-color:pink;"></div>
+                    <h3 class="text-center text-primary mb-0 ms-2">UI/UX Designer</h3>
+                  </div>
+                </div>   
+                <div class="bg-warning mt-3" style="height: 4px; width: 100%;"></div>
+                <h1 class="mt-3 text-center">{{ $uiUxDesignCount }}</h1>
+              </div>  
+            </div>
+
+            <!-- Cyber Security -->
+            <div class="col-md-6 mb-4">
+              <div class="chart-container ms-3 p-4 border rounded shadow-lg">
+                <div class="d-flex justify-content-center">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="rounded-circle bg-danger" style="height: 20px; width: 20px;"></div>
+                    <h3 class="text-center text-primary mb-0 ms-2">Cyber Security</h3>
+                  </div>
+                </div>   
+                <div class="bg-warning mt-3" style="height: 4px; width: 100%;"></div>
+                <h1 class="mt-3 text-center">{{ $cyberSecurityCount }}</h1>
+              </div>  
+            </div>
+
+            <!-- Software Developer -->
+            <div class="col-md-6 mb-4">
+              <div class="chart-container ms-3 p-4 border rounded shadow-lg">
+                <div class="d-flex justify-content-center">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="rounded-circle bg-warning" style="height: 20px; width: 20px;"></div>
+                    <h3 class="text-center text-primary mb-0 ms-2">Software Developer</h3>
+                  </div>
+                </div>                   <div class="bg-warning mt-3" style="height: 4px; width: 100%;"></div>
+                <h1 class="mt-3 text-center">{{ $softwareDevCount }}</h1>
+              </div>  
+            </div>
+
+            <div class="col-12">
+              <div class="chart-container ms-3 p-4 border rounded shadow-lg" style="height: 170px;">
+                <h3 class="text-center text-primary">Total Pendaftar ke Elitra</h3>
+                <div class="bg-warning mt-3" style="height: 4px; width: 100%;"></div>
+                <h1 class="mt-3 text-center">{{ $totalPekerja }}</h1>
+              </div>
+            </div>
+            
+
+        
+          </div>
+        </div>
+        
+      </div>
+        <h3 class="ms-4 mb-3">Pekerja yang Sudah memiliki Kontrak</h1>
         <table class="table table-hover ms-4 text-center" style="width: 80%">
             <thead>
               <tr class="border">
+                <form method="GET" action="{{ route('backend.content2') }}">
                 <th scope="col" colspan="10" style="">
                   <div class="d-flex" style="width: 100%;">
                     <div class="input-group" style="flex: 1;">
                       <span class="input-group-text bg-warning rounded-start bg-transparent">
-                        <a href="#" class="text-white"><i class="bi-search"></i></a>
+                        <button type="submit" class="btn"><i class="bi-search"></i></button>
                       </span>
-                      <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                      <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query_pekerja_kontrak">
                     </div>
                     <a class="btn btn-primary ms-2" href="{{ route('backend.content2.create') }}" role="button">Tambah Data</a>
                   </div>
                 </th>
+                </form>
               </tr>
               <tr>
                 <th scope="col">No</th>
@@ -53,24 +135,27 @@
                     </form>
                     </td>
                     @endforeach
+                </tr>
             </tbody>
           </table>
           <div class="ms-4 mt-5 text-center">
             <h3 class="text-start">Pekerja yang Belum memiliki Kontrak</h1>
-            <table class="table table-hover mt-1" style="width: 80%">
+            <table class="table table-hover mt-3" style="width: 80%">
                 <thead>
                   <tr class="border">
-                    <th scope="col" colspan="8" style="">
+                    <form method="GET" action="{{ route('backend.content2') }}">
+                      <th scope="col" colspan="8" style="">
                       <div class="d-flex" style="width: 100%;">
                         <div class="input-group" style="flex: 1;">
                           <span class="input-group-text bg-warning rounded-start bg-transparent">
-                            <a href="#" class="text-white"><i class="bi-search"></i></a>
+                            <button type="submit" class="btn"><i class="bi-search"></i  ></button>
                           </span>
-                          <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
+                          <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query_pekerja_non_kontrak">
                         </div>
                         <a class="btn btn-primary ms-2" href="{{ route('backend.content2.create2') }}" role="button">Tambah Data</a>
                       </div>
                     </th>
+                    </form>
                   </tr>
                   <tr>
                     <th scope="col">No</th>
@@ -98,8 +183,11 @@
                           Tidak ada CV
                           @endif
                         </td>
-                        <td>{{ $row2->status }}</td>
-                        <td>
+                        <td class="text-white {{ $row2->status == 'Belum Kontrak' ? 'bg-danger' : 'bg-success' }} status-badge">
+                          {{ $row2->status }}
+                      </td>
+                      
+                                              <td>
                           <form action="{{ route('backend.content2.destroy', ['id' => $row2->id, 'status' => $row2->status]) }}" method="POST">
                             @csrf
                                 @method('delete')
@@ -108,8 +196,10 @@
                             </form>
                         </td>
                         @endforeach
+                    </tr>
                 </tbody>
               </table>
           </div>
     </div>
+
 @endsection

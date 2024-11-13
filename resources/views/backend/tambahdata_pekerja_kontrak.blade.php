@@ -14,7 +14,16 @@
                 <h3>Tambah Pekerja yang Sudah memiliki Kontrak</h3>
             </div>
             <div class="card-body">
-                <form action="{{ route('backend.content2.store2') }}" method="POST">
+                @if ($errors->any()) 
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form action="{{ route('backend.content2.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>

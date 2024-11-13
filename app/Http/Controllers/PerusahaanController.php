@@ -7,15 +7,19 @@ use Illuminate\Http\Request;
 
 class PerusahaanController extends Controller
 {
-    public function index()
+    public function index(Request $request )
     {
-        // Ambil semua data dari tabel pekerja_memiliki_kontrak
-        $data4 = Perusahaan::all();
-
-
+        // Ambil input pencarian
+        $query = $request->input('query'); 
+    
+        // Cek apakah ada query pencarian, dan filter data jika ada
+        $data4 = Perusahaan::where('perusahaan', 'LIKE', "%{$query}%") // Cari berdasarkan nama perusahaan
+                    ->paginate(10); // Paginate hasil
+    
         // Kirim data ke view
         return view('backend.content4', compact('data4'));
     }
+    
 
     public function create()
     {

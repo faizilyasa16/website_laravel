@@ -6,16 +6,18 @@
     <table class="table table-hover ms-4 text-center" style="width: 80%">
         <thead>
           <tr class="border">
+            <form method="GET" action="{{ route('backend.content3.index') }}">
             <th scope="col" colspan="9" style="">
               <div class="d-flex" style="width: 100%;">
                 <div class="input-group" style="flex: 1;">
                   <span class="input-group-text bg-warning rounded-start bg-transparent">
-                    <a href="#" class="text-white"><i class="bi-search"></i></a>
+                    <button type="submit" class="btn"><i class="bi-search"></i></button>
                   </span>
                   <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
                 </div>
               </div>
             </th>
+            </form>
           </tr>
             <th scope="col">No</th>
             <th scope="col">Nama</th>
@@ -32,23 +34,40 @@
             @foreach ($data3 as $row)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $row->nama }}</td>
+                <td><a href="{{ route('backend.content5', ['nama' => $row->nama]) }}">{{ $row->nama }}</a></td>
                 <td>{{ $row->posisi_dilamar }}</td>
                 <td>{{ $row->email }}</td>
-                <td>{{ $row->cv }}</td>
+                <td>
+                  @if($row->cv)
+                  <a href="{{ asset('storage/' . $row->cv) }}" target="_blank">Lihat CV</a>
+                  @else
+                  Tidak ada CV
+                  @endif
+                </td>
                 <td>{{ $row->alamat_ktp }}</td>
                 <td>{{ $row->tanggal_submit }}</td>
-                <td>{{ $row->status }}</td>
+                <td>
+                    <form action="{{ route('backend.content3.updateStatus', ['id' => $row->id]) }}" method="post">
+                        @csrf
+                        @method('patch')
+                        <select name="status" class="form-select {{ $row->status == 'Sedang Di Proses' ? 'bg-warning' : ($row->status == 'Lulus' ? 'bg-success' : 'bg-danger') }}" onchange="this.style.backgroundColor = this.options[this.selectedIndex].className == 'bg-warning' ? '#ffc107' : (this.options[this.selectedIndex].className == 'bg-success' ? '#28a745' : '#dc3545'); this.form.submit();">
+                          <option class="bg-warning" value="Sedang Di Proses" {{ $row->status == 'Sedang Di Proses' ? 'selected' : '' }}>Sedang Di Proses</option>
+                          <option class="bg-success" value="Lulus" {{ $row->status == 'Lulus' ? 'selected' : '' }}>Lulus</option>
+                          <option class="bg-danger" value="Gagal" {{ $row->status == 'Gagal' ? 'selected' : '' }}>Gagal</option>
+                      </select>
+                      
+                    </form>
+                </td>
                 <td>
                     <form action="{{ route('backend.content3.destroy', ['id' => $row->id]) }}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">Hapus</button>
-                        <a class="btn btn-primary" href="#" role="button">Edit</a>
                     </form>
                 </td>
-                @endforeach
+            </tr>
+            @endforeach
         </tbody>
-      </table>
+    </table>
 </div>
 @endsection

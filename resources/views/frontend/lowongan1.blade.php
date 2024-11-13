@@ -103,57 +103,72 @@
             <!-- Form yang menggantikan konten lowongan ketika tombol Apply diklik -->
             <div id="applyForm" class="card p-4" style="margin-top: 150px">
                 <h2>Apply for Web Developer Position</h2>
-                <form action="/submit-application" method="POST">
+                <form action="{{ route('backend.content3.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <input type="hidden" id="posisi_dilamar" name="posisi_dilamar" value="Web Developer">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama Lengkap</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <label for="nama" class="form-label">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="kelamin" class="form-label">Jenis Kelamin</label>
-                        <select name="kelamin" id="kelamin" class="form-select" required>
+                        <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                        <select name="jenis_kelamin" id="jenis_kelamin" class="form-select" required>
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="Tanggal_Lahir">Tanggal Lahir</label>
-                        <input type="date" id="Tanggal_Lahir" name="Tanggal_Lahir" class="form-control" required>
+                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="telepon" class="form-label">No. Telepon</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                        <label for="no_telepon" class="form-label">No. Telepon</label>
+                        <input type="tel" id="no_telepon" name="no_telepon" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="alamat_ktp" class="form-label">Alamat sesuai KTP</label>
+                        <label for="alamat_ktp" class="form-label">Domisili</label>
                         <input type="text" id="alamat_ktp" name="alamat_ktp" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="alamat_tinggal" class="form-label">Alamat tempat tinggal</label>
+                        <label for="alamat_tinggal" class="form-label">Alamat lengkap</label>
                         <input type="text" id="alamat_tinggal" name="alamat_tinggal" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="pengalaman">Pengalaman dalam bidang</label>
-                        <input type="text" id="pengalaman" name="pengalaman" class="form-control" required>
+                        <label for="jabatan_sebelumnya">Pengalaman Sebelumnya</label>
+                        <input type="text" id="jabatan_sebelumnya" name="jabatan_sebelumnya" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="gaji" class="form-label">Gaji yang diharapkan</label>
-                        <input type="text" id="gaji" name="gaji" class="form-control" required>
+                        <label for="lama_pengalaman">Lama Pengalaman di bidang ini(Bulan)</label>
+                        <input type="text" id="lama_pengalaman" name="lama_pengalaman" class="form-control" required>
                     </div>
                     <div class="mb-3">
-                        <label for="resume" class="form-label">Resume</label>
-                        <input type="file" id="resume" name="resume" class="form-control" required>
+                        <label for="gaji_diharapkan" class="form-label">Gaji yang diharapkan</label>
+                        <input type="text" id="gaji_diharapkan" name="gaji_diharapkan" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cv" class="form-label">Resume/CV</label>
+                        <input type="file" id="cv" name="cv" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="linkedin" class="form-label">Linkedin (Opsional)</label>
-                        <input type="text" id="linkedin" name="linkedin" class="form-control" required>
+                        <input type="text" id="linkedin" name="linkedin" class="form-control" >
                     </div>
                        <div class="d-flex me-3 pb-3">
                         <button class="btn btn-secondary mt-3 me-auto" onclick="hideForm()">Kembali</button>
-                        <button class="btn btn-primary mt-3 ms-auto">Submit</button>
+                        <button type="submit" class="btn btn-primary mt-3 ms-auto" onclick="showForm('Web Developer')">Apply</button>
                     </div>
                 </form>
             </div>
@@ -214,10 +229,12 @@
 
       <script>
         // JavaScript untuk menampilkan form ketika tombol "Apply" diklik
-        function showForm() {
-            document.getElementById("jobContent").style.display = "none"; // Sembunyikan konten lowongan
-            document.getElementById("applyForm").style.display = "block";  // Tampilkan form
+        function showForm(posisi) {
+            document.getElementById("jobContent").style.display = "none";
+            document.getElementById("applyForm").style.display = "block";
+            document.getElementById("posisi_dilamar").value = posisi; // Set nilai posisi yang dipilih
         }
+
         function hideForm() {
             document.getElementById("jobContent").style.display = "block"; // Tampilkan konten lowongan
             document.getElementById("applyForm").style.display = "none";  // Sembunyikan form

@@ -6,17 +6,19 @@
     <table class="table table-hover ms-4 text-center" style="width: 80%">
         <thead>
           <tr class="border">
+            <form method="GET" action="{{ route('backend.content4') }}">
             <th scope="col" colspan="8" style="">
               <div class="d-flex" style="width: 100%;">
                 <div class="input-group" style="flex: 1;">
                   <span class="input-group-text bg-warning rounded-start bg-transparent">
-                    <a href="#" class="text-white"><i class="bi-search"></i></a>
+                    <button type="submit" class="btn"><i class="bi-search"></i></button>
                   </span>
                   <input class="form-control" type="search" placeholder="Cari sesuatu..." aria-label="Search" name="query">
                 </div>
                 <a class="btn btn-primary ms-2" href="{{ route('backend.content4.create') }}" role="button">Tambah Data</a>
               </div>
             </th>
+            </form>
           </tr>
             <th scope="col">No</th>
             <th scope="col">Perusahaan</th>

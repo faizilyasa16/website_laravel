@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HRD Room</title>
-    <link href="css/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/Bootstrap-icon/font/bootstrap-icons.css">
+    <link href="{{ asset('css/Bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/Bootstrap-icon/font/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -29,43 +29,13 @@
         .bg-primary-dark-bit {
             background-color: #222C65;
         }
-        .status-badge {
-            font-size: 1rem; /* Ukuran font kecil */
-            line-height: 1.2; /* Tinggi elemen lebih kecil */
-            display: inline-block; /* Agar sesuai dengan ukuran teks */
-            border-radius: 15px;
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-        .chart-container {
-        background-color: #333; /* Latar belakang gelap */
-        padding: 20px;
-        border-radius: 8px;
-        color: #fff;
-    }
-
-    .chart-container .apexcharts-title-text,
-    .chart-container .apexcharts-subtitle-text,
-    .chart-container .apexcharts-legend-text {
-        color: #fff !important; /* Paksa warna teks menjadi putih */
-    }
-
-    /* Jika judul atau subjudul tidak berubah, coba tambahkan style ini */
-    #karyawanChartContainer .apexcharts-title-text,
-    #karyawanChartContainer .apexcharts-subtitle-text {
-        color: #fff !important;
-    }
-
-
-
-
     </style>
 </head>
 <body data-bs-theme="dark">
     <div class="bg-secondary-subtle w-100 d-flex align-items-center justify-content-between" style="height: 100px;">
         <ul class="d-flex align-items-center list-unstyled m-0 w-100">
             <li class="d-flex position-relative" style="right: 30px">
-                <img src="img/logo_elitra.png" alt="" width="200px">
+                <img src="{{ asset('img/logo_elitra.png') }}" alt="" width="200px">
             </li>
             <li class="d-flex ms-auto me-5 position-relative">
                 <a href="#" class="text-white dropdown-toggle d-flex align-items-center link-underline link-underline-opacity-0" id="dropdownMenuButton" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -122,14 +92,23 @@
             </div>
 
             <div class="col"> <!-- Main Content now using col-12 -->
-                @yield('content') <!-- This will render the main content -->
+                <div class="fs-3 ms-5 mt-3 d inline-block">
+                    <a href="{{ route('backend.content3.index') }}" class="text-decoration-none text-white"><i class="bi bi-arrow-left">Back</i></a>
+                </div>
+                        <div class="ms-5 mt-2 rounded-4 w-50 bg-secondary p-4">
+                                <h1>{{ $data->nama }}</h1>
+                                <p>Tanggal Lahir    : {{ $data->tanggal_lahir }}</p>
+                                <p>No. Telepon      : {{ $data->no_telepon }}</p>
+                                <p>Alamat           : {{$data->alamat_tinggal}}</p>
+                                <p>LinkdIn          : {{$data->linkedin}}</p>
+                                <div class="bg-light" style="width: 100%; height: 4px;"></div>
+                                <p class="mt-3">Pengalaman Sebelumnya : {{ $data->jabatan_sebelumnya }}</p>
+                                <p>Lama Pengalaman (Bulan)      : {{ $data->lama_pengalaman }}</p>
+                                <p>Harapan Gaji          : {{ $data->gaji_diharapkan }}</p>
+                        </div>
             </div>
         </div>
     </div>
-    @isset($karyawanChart)
-    <script src="{{ $karyawanChart->cdn() }}"></script>
-    {{ $karyawanChart->script() }}
-@endisset
 
     <form id="keluar-app" action="{{ route('backend.logout') }}" method="post">
         @csrf

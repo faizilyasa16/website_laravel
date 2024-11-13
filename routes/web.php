@@ -11,6 +11,7 @@ use App\Http\Controllers\TableController;
 use App\Http\Controllers\pendaftarController;
 use App\Http\Controllers\PerusahaanController;
 use App\Models\Pendaftar;
+use Illuminate\Auth\Events\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,20 @@ Route::post('login', [LoginController::class, 'authenticateBackEnd'])->name('bac
 Route::post('logout', [LoginController::class, 'logoutBackEnd'])->name('backend.logout');
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
-Route::get('reset_password', [LoginController::class, 'reset_password'])->name('reset_password');
+// Menampilkan halaman form reset password
+Route::get('reset-password', [LoginController::class, 'reset_password'])->name('reset_password');
+
+// Mengirimkan link reset password ke email pengguna
+Route::post('send-reset-link', [LoginController::class, 'sendResetLink'])->name('password.email');
+
+// Menangani proses reset password setelah pengguna mengisi form baru password
+// Rute untuk halaman reset password form
+Route::get('password/reset/{token}', [LoginController::class, 'showResetForm'])->name('password.reset');
+
+// Rute untuk proses update password
+Route::post('password/reset', [LoginController::class, 'resetPassword'])->name('password.update');
+
+
 
 Route::get('/content', function () {
     return view('backend.content1');
@@ -63,6 +77,9 @@ Route::put('/content2/update2/{id}/{status}', [TableController::class, 'update2'
 
 
 Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3');
+Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3.index');
+Route::patch('/backend/content3/{id}/update-status', [pendaftarController::class, 'updateStatus'])->name('backend.content3.updateStatus');
+Route::post('/content3/store', [PendaftarController::class, 'store'])->name('backend.content3.store');
 Route::delete('/content3/{id}', [pendaftarController::class, 'destroy'])->name('backend.content3.destroy');
 
 Route::get('/content4', [PerusahaanController::class, 'index'])->name('backend.content4');
@@ -72,6 +89,7 @@ Route::get('/content4/tambah', [PerusahaanController::class, 'create'])->name('b
 Route::get('/content4/edit/{id}', [PerusahaanController::class, 'edit'])->name('backend.content4.edit');
 Route::put('/content4/update/{id}', [PerusahaanController::class, 'update'])->name('backend.content4.update');
 
+Route::get('/content5/{nama}', [pendaftarController::class, 'index2'])->name('backend.content5');
 
 // route khusus frontend
 Route::get('/homefrontend', [HomeFrontendController::class, 'index']) ->name('homefrontend');
