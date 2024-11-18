@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/Bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Bootstrap-icon/font/bootstrap-icons.css') }}">
     <style>
+        body {
+            background: linear-gradient(to bottom, #1a1a60, #ff7f00);
+        }
         .bg-primary-dark {
             background-color: #1C2655;
         }
@@ -35,12 +38,12 @@
         }
     </style>
 </head>
-<body class="bg-primary-dark">
+<body>
     <section class="login-section">
-        <div class="container">
+        <div class="container w-50">
+            <h1 class="text-center text-white mb-3">Elit<span class="text-warning fw-bold">Ra</span></h1>
             <div class="row login-left">
-                <div class="col-md-6 order-md-1">
-                    <h1 class="text-center text-white mb-3">Elit<span class="text-warning fw-bold">Ra</span></h1>
+                <div class="col-md-12 order-md-1">
                     <h3 class="text-center text-white">{{ $title }}</h3>
                     
                     @if ($errors->any())
@@ -115,17 +118,17 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center mb-3">
+                            <div style="width: 100%; height: 2px; background-color: #ddd;"></div>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-start" href="{{ route('backend.login') }}">Sudah Punya Akun?</a>
+                        </div>
                         <div class="mx-auto d-flex flex-column flex-md-row justify-content-md-center mt-4 ">
                             <button type="submit" class="btn btn-primary ms-auto w-100">Register</button> 
                         </div>
                     </form>
 
-            </div>
-            <div class="col-md-6 login-right order-md-2 d-flex flex-column justify-content-center align-items-center text-center">
-                <h1 class="text-white mb-4">
-                    Sudah Punya Akun? Yuk! login sekarang
-                </h1>
-                <a href="{{ route('backend.login') }}" class="btn btn-secondary w-50">Kembali</a>
             </div>
     </section>
     
