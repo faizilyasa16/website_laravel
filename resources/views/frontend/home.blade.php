@@ -9,111 +9,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/Bootstrap-icon/font/bootstrap-icons.css') }}">
     <style>
-      .navbar ul li a {
-          color: white;
-          transition: color 0.3s ease;
-      }
-
-      .navbar ul li a:hover {
-          color: orange;
-      }
-      textarea.form-control {
-  min-height: 100px; /* Tinggi minimum */
-  resize: vertical;  /* Hanya memungkinkan resize vertikal */
-  width: 100%;       /* Pastikan lebar 100% */
+/* Navbar hover */
+.navbar ul li a {
+    color: white;
+    transition: color 0.3s ease;
 }
 
+.navbar ul li a:hover {
+    color: orange;
+}
 
-      .body-slide {
-          display: grid;
-          place-items: center;
-          overflow: hidden;
-      }
-      
-      .slider {
-          height: 300px;
-          width: 100%;
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-      }
-      
-      .slide-track {
-          display: flex;
-          width: calc(250px * 18);
-          animation: scroll 30s linear infinite;
-      }
-      
-      .slide-track:hover {
-          animation-play-state: paused;
-      }
+/* Textarea styling */
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+    width: 100%;
+}
 
-      @keyframes scroll {
-          0% {
-              transform: translateX(0);
-          }
-          100% {
-              transform: translateX(calc(-250px * 3));
-          }
-      }
+/* Slider container */
+.body-slide {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
 
-      .slide {
+.slider {
+    height: 300px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Track for slides */
+.slide-track {
+    display: flex;
+    width: calc(300px * 20); /* Adjust based on item count */
+    animation: scroll 50s linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+/* Keyframes for smooth scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 5)); /* Half of total width */
+    }
+}
+
+/* Slide styling */
+.slide {
     height: 200px;
-    width: 300px; /* Increase width here */
+    width: 300px;
     display: flex;
     align-items: center;
     padding: 15px;
     perspective: 100px;
 }
 
-      .slide img {
-          width: 100%;
-          transition: transform 0.8s;
-      }
+.slide img {
+    width: 100%;
+    transition: transform 0.8s ease;
+}
 
-      
-      .slide img:hover {
-          transform: scale(1.1);
-      }
+.slide img:hover {
+    transform: scale(1.1);
+}
 
-      .slider::before,
-      .slider::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          width: 15%;
-          height: 100%;
-          z-index: 2;
-      }
+/* Optional shadow fade on edges */
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Allow interaction with slides */
+}
 
-      .slider::before {
-          left: 0;
-      }
+.slider::after {
+    right: 0;
+    transform: rotateY(180deg);
+}
 
-      .slider::after {
-          right: 0;
-          transform: rotateY(180deg);
-      }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide {
+        width: 150px;
+    }
 
-      @media (max-width: 768px) {
-          .slide {
-              width: 150px;
-          }
-          .slide-track {
-              width: calc(150px * 18);
-              animation: scroll 60s linear infinite;
-          }
-          @keyframes scroll {
-              0% {
-                  transform: translateX(0);
-              }
-              100% {
-                  transform: translateX(calc(-150px * 3));
-              }
-          }
-      }
+    .slide-track {
+        width: calc(150px * 20); /* Adjusted for responsive */
+        animation: scroll 60s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-150px * 10)); /* Adjusted for responsive */
+        }
+    }
+}
+
   </style>
 </head>
 <body data-bs-theme="light">
@@ -226,60 +233,68 @@
   <div class="slider">
     <div class="slide-track">
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/tokped.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/kfc.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/bca.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/astra.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/danone.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/lion.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/perta.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/telkom.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/unilever.png') }}" alt="">
       </div>
       {{-- nge doublein --}}
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/indofod.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/tokped.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/kfc.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/bca.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/astra.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/danone.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/lion.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/perta.png') }}" alt="">
       </div>
       <div class="slide">
-        <img src="{{ asset('img/alam.jpg') }}" alt="">
+        <img src="{{ asset('img/telkom.png') }}" alt="">
       </div>
+      <div class="slide">
+        <img src="{{ asset('img/unilever.png') }}" alt="">
+      </div>
+      {{-- nge doublein --}}
+      <div class="slide">
+        <img src="{{ asset('img/indofod.png') }}" alt="">
+      </div>
+      
     </div>
   </div>
 </div>

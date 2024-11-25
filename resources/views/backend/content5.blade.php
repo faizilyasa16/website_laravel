@@ -93,7 +93,7 @@
 
             <div class="col"> <!-- Main Content now using col-12 -->
                 <div class="fs-3 ms-2 mt-3 d inline-block">
-                    <a href="{{ route('backend.content3.index') }}" class="text-decoration-none text-white"><i class="bi bi-arrow-left">Back</i></a>
+                    <a href="{{ route('backend.content3.index') }}" class="text-decoration-none text-white"><i class="bi bi-arrow-left"><span>Back</span></i></a>
                 </div>
                         <div class="ms-5 mt-5 rounded-4 w-50 bg-primary p-4">
                                 <h1>{{ $data->nama }}</h1>
