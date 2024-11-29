@@ -39,11 +39,9 @@ Route::get('tugas2', [HelloController::class, 'tugas2']);
 Route::resource('anggota', AnggotaController::class);
 
 
-Route::get('home', [HomeController::class, 'homeBackEnd'])->name('home');
 
 Route::get('login', [LoginController::class, 'loginBackEnd'])->name('backend.login');
 Route::post('login', [LoginController::class, 'authenticateBackEnd'])->name('backend.login');
-Route::post('logout', [LoginController::class, 'logoutBackEnd'])->name('backend.logout');
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 // Menampilkan halaman form reset password
@@ -61,35 +59,49 @@ Route::post('password/reset', [LoginController::class, 'resetPassword'])->name('
 
 
 
-Route::get('/content', function () {
-    return view('backend.content1');
+// RUTE BACKEND
+Route::middleware(['auth'])->group(function () {
+    // Halaman utama backend
+    Route::get('home', [HomeController::class, 'content1'])->name('home');
+
+    // Logout
+    Route::post('logout', [LoginController::class, 'logoutBackEnd'])->name('backend.logout');
+
+    // Content 1
+    Route::get('/content', function () {
+        return view('backend.content1');
+    });
+
+    // Content 2
+    Route::get('/content2', [TableController::class, 'index'])->name('backend.content2');
+    Route::delete('/content2/{id}/{status}', [TableController::class, 'destroy'])->name('backend.content2.destroy');
+    Route::post('/content2/store', [TableController::class, 'store'])->name('backend.content2.store');
+    Route::post('/content2/store2', [TableController::class, 'store2'])->name('backend.content2.store2');
+    Route::get('/content2/tambah', [TableController::class, 'create'])->name('backend.content2.create');
+    Route::get('/content2/tambah2', [TableController::class, 'create2'])->name('backend.content2.create2');
+    Route::get('/content2/edit/{id}/{status}', [TableController::class, 'edit'])->name('backend.content2.edit');
+    Route::put('/content2/update/{id}/{status}', [TableController::class, 'update'])->name('backend.content2.update');
+    Route::get('/content2/edit2/{id}/{status}', [TableController::class, 'edit2'])->name('backend.content2.edit2');
+    Route::put('/content2/update2/{id}/{status}', [TableController::class, 'update2'])->name('backend.content2.update2');
+
+    // Content 3
+    Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3.index');
+    Route::patch('/backend/content3/{id}/update-status', [pendaftarController::class, 'updateStatus'])->name('backend.content3.updateStatus');
+    Route::post('/content3/store', [PendaftarController::class, 'store'])->name('backend.content3.store');
+    Route::delete('/content3/{id}', [pendaftarController::class, 'destroy'])->name('backend.content3.destroy');
+
+    // Content 4
+    Route::get('/content4', [PerusahaanController::class, 'index'])->name('backend.content4');
+    Route::delete('/content4/{id}', [PerusahaanController::class, 'destroy'])->name('backend.content4.destroy');
+    Route::post('/content4/store', [PerusahaanController::class, 'store'])->name('backend.content4.store');
+    Route::get('/content4/tambah', [PerusahaanController::class, 'create'])->name('backend.content4.create');
+    Route::get('/content4/edit/{id}', [PerusahaanController::class, 'edit'])->name('backend.content4.edit');
+    Route::put('/content4/update/{id}', [PerusahaanController::class, 'update'])->name('backend.content4.update');
+
+    // Content 5
+    Route::get('/content5/{nama}', [pendaftarController::class, 'index2'])->name('backend.content5');
 });
-Route::get('/content2', [TableController::class, 'index'])->name('backend.content2');
-Route::delete('/content2/{id}/{status}', [TableController::class, 'destroy'])->name('backend.content2.destroy');
-Route::post('/content2/store', [TableController::class, 'store'])->name('backend.content2.store');
-Route::post('/content2/store2', [TableController::class, 'store2'])->name('backend.content2.store2');
-Route::get('/content2/tambah', [TableController::class, 'create'])->name('backend.content2.create');
-Route::get('/content2/tambah2', [TableController::class, 'create2'])->name('backend.content2.create2');
-Route::get('/content2/edit/{id}/{status}', [TableController::class, 'edit'])->name('backend.content2.edit');
-Route::put('/content2/update/{id}/{status}', [TableController::class, 'update'])->name('backend.content2.update');
-Route::get('/content2/edit2/{id}/{status}', [TableController::class, 'edit2'])->name('backend.content2.edit2');
-Route::put('/content2/update2/{id}/{status}', [TableController::class, 'update2'])->name('backend.content2.update2');
 
-
-Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3');
-Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3.index');
-Route::patch('/backend/content3/{id}/update-status', [pendaftarController::class, 'updateStatus'])->name('backend.content3.updateStatus');
-Route::post('/content3/store', [PendaftarController::class, 'store'])->name('backend.content3.store');
-Route::delete('/content3/{id}', [pendaftarController::class, 'destroy'])->name('backend.content3.destroy');
-
-Route::get('/content4', [PerusahaanController::class, 'index'])->name('backend.content4');
-Route::delete('/content4/{id}', [PerusahaanController::class, 'destroy'])->name('backend.content4.destroy');
-Route::post('/content4/store', [PerusahaanController::class, 'store'])->name('backend.content4.store');
-Route::get('/content4/tambah', [PerusahaanController::class, 'create'])->name('backend.content4.create');
-Route::get('/content4/edit/{id}', [PerusahaanController::class, 'edit'])->name('backend.content4.edit');
-Route::put('/content4/update/{id}', [PerusahaanController::class, 'update'])->name('backend.content4.update');
-
-Route::get('/content5/{nama}', [pendaftarController::class, 'index2'])->name('backend.content5');
 
 // route khusus frontend
 Route::get('/homefrontend', [HomeFrontendController::class, 'index']) ->name('homefrontend');

@@ -117,8 +117,8 @@
             <tbody>
                 @foreach ($data as $row)
                 <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $row->nama }}</td>
+                  <th scope="row">{{ $loop->iteration + ($data->currentPage() - 1) * $data->perPage() }}</th>
+                  <td>{{ $row->nama }}</td>
                     <td>{{ $row->posisi_dikontrak }}</td>
                     <td>{{ $row->tanggal_mulai_kontrak }}</td>
                     <td>{{ $row->email }}</td>
@@ -137,10 +137,17 @@
                     @endforeach
                 </tr>
             </tbody>
+
           </table>
+          <div class="" style="display: flex; margin-left: 40%;">
+            {{ $data->links() }}
+          </div>
+        
+
+      
           <div class="ms-4 mt-5 text-center">
             <h3 class="text-start">Pekerja yang Belum memiliki Kontrak</h1>
-            <table class="table table-hover mt-3" style="width: 80%">
+            <table class="table table-hover mt-3" style="width: 81%">
                 <thead>
                   <tr class="border">
                     <form method="GET" action="{{ route('backend.content2') }}">
@@ -171,8 +178,8 @@
                 <tbody>
                     @foreach ($data2 as $row2)
                     <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $row2->nama }}</td>
+                      <th scope="row">{{ $loop->iteration + ($data2->currentPage() - 1) * $data2->perPage() }}</th>
+                      <td>{{ $row2->nama }}</td>
                         <td>{{ $row2->posisi_keahlian }}</td>
                         <td>{{ $row2->tanggal_masuk }}</td>
                         <td>{{ $row2->email }}</td>
@@ -199,6 +206,10 @@
                     </tr>
                 </tbody>
               </table>
+              <div class="" style="display: flex; margin-left: 39.2%;">
+                {{ $data2->links() }}
+              </div>
+            
           </div>
     </div>
 

@@ -56,8 +56,6 @@
                         <label for="status" class="form-label">Status Kontrak</label>
                         <select id="status" name="status" class="form-select" required>
                             <option value="Kontrak">Kontrak</option>
-                            <option value="belum">Belum Kontrak</option>
-                            <option value="pendaftar">Pendaftar</option>
                         </select>
                     </div>
     

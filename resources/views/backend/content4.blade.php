@@ -33,8 +33,8 @@
         <tbody>
             @foreach ($data4 as $row)
             <tr>
-                <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $row->perusahaan }}</td>
+              <th scope="row">{{ $loop->iteration + ($data4->currentPage() - 1) * $data4->perPage() }}</th>
+              <td>{{ $row->perusahaan }}</td>
                 <td>{{ $row->jumlah_staff_bekerja_sama }}</td>
                 <td>{{ $row->tanggal_terdaftar }}</td>
                 <td>{{ $row->tanggal_berakhir }}</td>
@@ -51,5 +51,8 @@
                 @endforeach
         </tbody>
       </table>
+      <div class="" style="display: flex; margin-left: 40%;">
+        {{ $data4->links() }}
+      </div>
 </div>
 @endsection

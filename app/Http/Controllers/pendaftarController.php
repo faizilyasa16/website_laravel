@@ -14,7 +14,7 @@ class pendaftarController extends Controller
         $data3 = Pendaftar::where('nama', 'LIKE', "%{$query}%") // Cari berdasarkan nama
                     ->orWhere('posisi_dilamar', 'LIKE', "%{$query}%") // Atau posisi yang dilamar
                     ->orWhere('email', 'LIKE', "%{$query}%") // Atau email
-                    ->paginate(10); // Paginate hasil
+                    ->paginate(1); // Paginate hasil
         // Kirim data ke view
         return view('backend.content3', compact('data3'));
     }

@@ -14,7 +14,7 @@ class PerusahaanController extends Controller
     
         // Cek apakah ada query pencarian, dan filter data jika ada
         $data4 = Perusahaan::where('perusahaan', 'LIKE', "%{$query}%") // Cari berdasarkan nama perusahaan
-                    ->paginate(10); // Paginate hasil
+                    ->paginate(1); // Paginate hasil
     
         // Kirim data ke view
         return view('backend.content4', compact('data4'));

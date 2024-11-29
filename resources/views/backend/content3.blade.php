@@ -33,8 +33,8 @@
         <tbody>
             @foreach ($data3 as $row)
             <tr>
-                <th scope="row">{{ $loop->iteration }}</th>
-                <td><a href="{{ route('backend.content5', ['nama' => $row->nama]) }}">{{ $row->nama }}</a></td>
+              <th scope="row">{{ $loop->iteration + ($data3->currentPage() - 1) * $data3->perPage() }}</th>
+              <td><a href="{{ route('backend.content5', ['nama' => $row->nama]) }}">{{ $row->nama }}</a></td>
                 <td>{{ $row->posisi_dilamar }}</td>
                 <td>{{ $row->email }}</td>
                 <td>
@@ -69,5 +69,8 @@
             @endforeach
         </tbody>
     </table>
+    <div class="" style="display: flex; margin-left: 40%;">
+      {{ $data3->links() }}
+    </div>
 </div>
 @endsection

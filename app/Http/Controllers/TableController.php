@@ -21,17 +21,16 @@ class TableController extends Controller
         
         // Filter data pekerja dengan kontrak
         $data['data'] = SudahKontrak::where('status', 'kontrak')
-            ->when($queryPekerjaKontrak, function ($query) use ($queryPekerjaKontrak) {
-                $query->where('nama', 'like', '%' . $queryPekerjaKontrak . '%')
-                      ->orWhere('email', 'like', '%' . $queryPekerjaKontrak . '%');
-            })->get();
+        ->when($queryPekerjaKontrak, function ($query) use ($queryPekerjaKontrak) {
+            $query->where('nama', 'like', '%' . $queryPekerjaKontrak . '%')
+                  ->orWhere('email', 'like', '%' . $queryPekerjaKontrak . '%');
+        })->paginate(1);
     
-        // Filter data pekerja tanpa kontrak
         $data['data2'] = BelumKontrak::where('status', '!=', 'kontrak')
             ->when($queryPekerjaNonKontrak, function ($query) use ($queryPekerjaNonKontrak) {
                 $query->where('nama', 'like', '%' . $queryPekerjaNonKontrak . '%')
-                      ->orWhere('email', 'like', '%' . $queryPekerjaNonKontrak . '%');
-            })->get();
+                    ->orWhere('email', 'like', '%' . $queryPekerjaNonKontrak . '%');
+            })->paginate(1);
         
         // Hitung jumlah pekerja yang sudah kontrak dan belum kontrak
         // $sudahKontrakCount = SudahKontrak::where('status', 'kontrak')->count();  
