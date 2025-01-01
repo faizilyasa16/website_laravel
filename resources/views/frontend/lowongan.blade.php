@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/Bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/Bootstrap-icon/font/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
         .navbar ul li a {
             color: white;
@@ -51,7 +52,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-6 mb-4">
-                    <div class="border rounded-top-4">
+                    <div class="border rounded-top-4" data-aos="fade-right" data-aos-duration="2000">
                         <img src="{{ asset('img/lowongan.jpg') }}" class="img-fluid rounded-top-4" alt="" style="height: 200px; width: 100%; object-fit: cover;">
                         <h3 class="pt-2 ms-2">Web Developer</h3>
                         <p class="ms-2">Kami mencari tim Web Developer berpengalaman yang siap membantu Anda membangun dan mengoptimalkan situs web yang responsif, fungsional, dan sesuai kebutuhan bisnis Anda. Lihat info selengkapnya!</p>
@@ -61,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-6 mb-4">
-                    <div class="border rounded-top-4">
+                    <div class="border rounded-top-4" data-aos="fade-left" data-aos-duration="2000">
                         <img src="{{ asset('img/lowongan2.jpg') }}" class="img-fluid rounded-top-4" alt="" style="height: 200px; width: 100%; object-fit: cover;">
                         <h3 class="pt-2 ms-2">Cyber Security</h3>
                         <p class="ms-2">Kami mencari solusi keamanan digital yang prioritas. Tim Cyber Security kami melindungi data dan sistem Anda dari ancaman siber dengan solusi keamanan yang terkini dan proaktif. Lihat info selengkapnya!"</p>
@@ -71,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-6 mb-4">
-                    <div class="border rounded-top-4">
+                    <div class="border rounded-top-4" data-aos="fade-right" data-aos-duration="3000">
                         <img src="{{ asset('img/lowongan3.jpg') }}" class="img-fluid rounded-top-4" alt="" style="height: 200px; width: 100%; object-fit: cover;">
                         <h3 class="pt-2 ms-2">UI / UX Designer</h3>
                         <p class="ms-2">Kami mencari desainer yang paham bahwa desain adalah kunci dalam menciptakan pengalaman pengguna yang menarik. UI/UX Designer kami bekerja keras untuk menghadirkan antarmuka yang intuitif dan menarik bagi audiens Anda. Lihat info selengkapnya!</p>
@@ -81,7 +82,7 @@
                     </div>
                 </div>
                 <div class="col-6 mb-4">
-                    <div class="border rounded-top-4">
+                    <div class="border rounded-top-4" data-aos="fade-left" data-aos-duration="3000">
                         <img src="{{ asset('img/lowongan4.jpg') }}" class="img-fluid rounded-top-4" alt="" style="height: 200px; width: 100%; object-fit: cover;">
                         <h3 class="pt-2 ms-2">Software Developer</h3>
                         <p class="ms-2">Kami mencari Software Developer berbakat dengan keahlian tinggi dalam pengembangan perangkat lunak. Dengan solusi inovatif dan berorientasi hasil, kami siap mendukung operasional bisnis Anda secara efisien dan optimal. Temukan info selengkapnya dan bergabunglah dengan kami!</p>
@@ -150,5 +151,10 @@
 
 
     <script src="{{ asset('js/Bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>

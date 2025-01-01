@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('css/Bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Bootstrap-icon/font/bootstrap-icons.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         .navbar ul li a {
             color: white;
@@ -70,32 +71,34 @@
                 </div>
             </div>
             
-            <img src="{{ asset('img/alam.jpg') }}" alt="" class="img-fluid mt-5 rounded-5" style="width: 100%; height: 500px; object-fit: cover;">
+            <img src="{{ asset('img/alam.jpg') }}" alt="" class="img-fluid mt-5 rounded-5" style="width: 100%; height: 500px; object-fit: cover;" data-aos="zoom-in" data-aos-duration="2000">
             <div class="mt-4 ms-2">
                 <div class="row">
                     <div class="col-6 mt-3">
-                        <div class="mb-4">
+                        <div class="mb-4" data-aos="fade-right" data-aos-duration="2000">
                             <h3 class="">Cerita Kami</h3>
                             <div class="bg-warning " style="height: 4px; width: 12%;"></div>
                         </div>
-                        <div class="fs-5">
+                        <div class="fs-5" data-aos="fade-right" data-aos-duration="1500">
                             <p class="mb-3">Di PT ElitRa, kami bekerja dengan teknologi terkini untuk menyediakan layanan terbaik. Kami ahli dalam AWS, Microsoft Azure, Docker, Kubernetes, dan berbagai alat keamanan siber terdepan guna menjaga sistem klien kami tetap aman dan efisien. Kami selalu mengikuti tren industri untuk memastikan solusi kami siap menghadapi masa depan.</p>
                             <p>Tim ahli bersertifikasi kami terdiri dari pengembang perangkat lunak, spesialis keamanan siber, insinyur jaringan, dan analis data yang memiliki pengalaman bertahun-tahun di industri ini. Dengan keahlian yang beragam, kami mampu menangani proyek dengan berbagai ukuran dan tingkat kompleksitas, memastikan klien kami mendapatkan solusi dan hasil terbaik.</p>
                         </div>
                     </div>
                     <div class="col-6 mt-3">
-                        <div class="fs-5">
+                        <div class="fs-5" data-aos="fade-left" data-aos-duration="1500">
                             <p class="mb-3">Didirikan pada tahun 2024, PT ElitRa adalah penyedia layanan outsourcing TI terkemuka yang bertujuan untuk memberikan solusi teknologi inovatif dan berkualitas tinggi. Tim kami berdedikasi membantu bisnis untuk mengoptimalkan dan mentransformasi operasional TI mereka, sehingga mereka dapat fokus pada hal yang paling penting mengembangkan bisnis inti mereka. </p>
                             <p>Kami percaya bahwa integritas, perbaikan berkelanjutan, dan komitmen terhadap keunggulan adalah fondasi utama dari setiap layanan yang kami berikan. Di PT Solusi Digital Maju, kami selalu berusaha untuk memberikan layanan yang transparan, jujur, dan dapat dipercaya, sehingga menciptakan hubungan jangka panjang dengan klien kami. </p>
                         </div>
-                        <h3 class="text-center" style="margin-top: 25px;">Layanan Kami</h3>
-                        <div class="bg-warning mx-auto" style="height: 4px; width: 30%;"></div>
+                        <div class="" data-aos="fade-left" data-aos-duration="2000">
+                            <h3 class="text-center" style="margin-top: 25px;">Layanan Kami</h3>
+                            <div class="bg-warning mx-auto" style="height: 4px; width: 30%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
                 <div class="row mt-5">
                     <div class="col-6 mb-4">
-                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;">
+                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;" data-aos="fade-up" data-aos-duration="2000">
                             <div class="row">
                                 <div class="col-2 d-flex justify-content-center align-items-center">
                                     <i class="bi bi-globe ms-3" style="font-size: 80px;"></i>
@@ -109,7 +112,7 @@
                         </div>
                     </div>
                     <div class="col-6 mb-4">
-                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;">
+                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;" data-aos="fade-up" data-aos-duration="2000">
                             <div class="row">
                                 <div class="col-2 d-flex justify-content-center align-items-center">
                                     <i class="bi bi-shield-lock ms-3" style="font-size: 80px;"></i>
@@ -123,7 +126,7 @@
                         </div>
                     </div>
                     <div class="col-6 mb-4">
-                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;">
+                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;" data-aos="fade-up" data-aos-duration="3000">
                             <div class="row">
                                 <div class="col-2 d-flex justify-content-center align-items-center">
                                     <i class="bi bi-pencil-square ms-3" style="font-size: 80px;"></i>
@@ -137,7 +140,7 @@
                         </div>
                     </div>
                     <div class="col-6 mb-4">
-                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;">
+                        <div class="border rounded-top-4 text-white" style="background-color: #222C65;" data-aos="fade-up" data-aos-duration="3000"> 
                             <div class="row">
                                 <div class="col-2 d-flex justify-content-center align-items-center">
                                     <i class="bi bi-code-slash ms-3" style="font-size: 80px;"></i>
@@ -328,7 +331,11 @@
         </div>
       </div>
       
-    
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+      <script>
+        AOS.init();
+      </script>
     
 </body>
 </html>

@@ -19,28 +19,28 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="perusahaan" class="form-label">Perusahaan</label>
-                        <input type="text" id="perusahaan" name="perusahaan" class="form-control" required>
+                        <input type="text" id="perusahaan" name="perusahaan" value="{{ $perusahaan->perusahaan }}" class="form-control" required>
                     </div>
                     
                     <div class="mb-3">
                         <label for="jumlah_staff_bekerja_sama" class="form-label">Jumlah Staff Bekerja Sama</label>
-                        <input type="text" id="jumlah_staff_bekerja_sama" name="jumlah_staff_bekerja_sama" class="form-control" required>
+                        <input type="text" id="jumlah_staff_bekerja_sama" value="{{ $perusahaan->jumlah_staff_bekerja_sama }}" name="jumlah_staff_bekerja_sama" class="form-control" required>
                     </div>
     
                     <div class="mb-3">
                         <label for="tanggal_terdaftar" class="form-label">Tanggal Terdaftar</label>
-                        <input type="date" id="tanggal_terdaftar" name="tanggal_terdaftar" class="form-control" required>
+                        <input type="date" id="tanggal_terdaftar" value="{{ $perusahaan->tanggal_terdaftar }}" name="tanggal_terdaftar" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="tanggal_berakhir" class="form-label">Tanggal Berakhir</label>
-                        <input type="date" id="tanggal_berakhir" name="tanggal_berakhir" class="form-control" required>
+                        <input type="date" id="tanggal_berakhir" value="{{ $perusahaan->tanggal_berakhir }}" name="tanggal_berakhir" class="form-control" required>
                     </div>
 
     
                     <div class="mb-3">
                         <label for="email_perusahaan" class="form-label">Email Perusahaan</label>
-                        <input type="email" id="email_perusahaan" name="email_perusahaan" class="form-control" required>
+                        <input type="email" id="email_perusahaan" value="{{ $perusahaan->email_perusahaan }}" name="email_perusahaan"  class="form-control" required>
                     </div>
 
     

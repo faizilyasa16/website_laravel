@@ -14,7 +14,7 @@ class PerusahaanController extends Controller
     
         // Cek apakah ada query pencarian, dan filter data jika ada
         $data4 = Perusahaan::where('perusahaan', 'LIKE', "%{$query}%") // Cari berdasarkan nama perusahaan
-                    ->paginate(1); // Paginate hasil
+                    ->paginate(5); // Paginate hasil
     
         // Kirim data ke view
         return view('backend.content4', compact('data4'));
@@ -86,6 +86,8 @@ class PerusahaanController extends Controller
             'tanggal_terdaftar' => 'required|date',
             'tanggal_berakhir' => 'required|date',
             'email_perusahaan' => 'required|email|max:255',
+            'status' => 'required|in:Terdaftar,Berakhir',
+
         ]);
     
         // Ambil data perusahaan berdasarkan ID
@@ -97,6 +99,7 @@ class PerusahaanController extends Controller
         $perusahaan->tanggal_terdaftar = $request->input('tanggal_terdaftar');
         $perusahaan->tanggal_berakhir = $request->input('tanggal_berakhir');
         $perusahaan->email_perusahaan = $request->input('email_perusahaan');
+        $perusahaan->status = $request->input('status');
     
         // Simpan data ke database
         $perusahaan->save();

@@ -50,6 +50,15 @@
         <div class="container">
             <!-- Konten lowongan pekerjaan -->
             <div id="jobContent">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <h1 class="text-start" style="margin-top: 150px">WEB DEVELOPER</h1>
                 <div class="bg-warning mb-4" style="height: 4px; width: 12%;"></div>
                 <div class="card">
@@ -94,6 +103,16 @@
                             <li>Lulusan baru dengan logika dan pemikiran analitik yang baik didorong untuk melamar</li>
                         </ul>
                     </div>
+                    <div class="card-body ms-4">
+                        <h5 class="card-title">Benefit :</h5>
+                        <ul class="mt-4">
+                            <li>Asuransi kesehatan dan jiwa</li>
+                            <li>Tunjangan transportasi</li>
+                            <li>Kesempatan pengembangan karir</li>
+                            <li>Bonus tahunan berdasarkan kinerja</li>
+                            <li>Lingkungan kerja yang mendukung dan kolaboratif</li>
+                        </ul>
+                    </div>
                     <div class="d-flex me-3 pb-3">
                         <button class="btn btn-primary mt-3 ms-auto" onclick="showForm()">Apply</button>
                     </div>
@@ -105,15 +124,6 @@
                 <h2>Apply for Web Developer Position</h2>
                 <form action="{{ route('backend.content3.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <input type="hidden" id="posisi_dilamar" name="posisi_dilamar" value="Web Developer">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>

@@ -54,5 +54,24 @@
       <div class="" style="display: flex; margin-left: 40%;">
         {{ $data4->links() }}
       </div>
+      <div class="mt-4 ms-4" style="width: 80%;">
+        <h5>Cetak Laporan</h5>
+        <form action="{{ route('laporan.generate2') }}" method="POST" target="_blank">
+            @csrf
+            <div class="row">
+                <div class="col-md-5">
+                    <label for="tanggal_awal" class="form-label">Tanggal Awal</label>
+                    <input type="date" name="tanggal_awal" id="tanggal_awal" class="form-control" required>
+                </div>
+                <div class="col-md-5">
+                    <label for="tanggal_akhir" class="form-label">Tanggal Akhir</label>
+                    <input type="date" name="tanggal_akhir" id="tanggal_akhir" class="form-control" required>
+                </div>
+                <div class="col-md-2 align-self-end">
+                    <button type="submit" class="btn btn-primary mt-3">Cetak Laporan</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 @endsection

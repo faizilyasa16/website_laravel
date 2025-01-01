@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/Bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/Bootstrap-icon/font/bootstrap-icons.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
 /* Navbar hover */
 .navbar ul li a {
@@ -142,7 +144,7 @@ textarea.form-control {
 <!-- Tambahkan padding pada konten utama -->
 <div class="content" style="padding-top: 100px;">
   <div class="card text-bg-dark">
-    <img src="https://storage.googleapis.com/a1aa/image/dmr7qhKEDaYPHlnFQ4miS7SQVTfA1aTzBDzXbr1bO0e4sMrTA.jpg" class="card-img opacity-50" alt="..." style="width: 100%; height: 500px; object-fit: cover">
+    <img src="https://storage.googleapis.com/a1aa/image/dmr7qhKEDaYPHlnFQ4miS7SQVTfA1aTzBDzXbr1bO0e4sMrTA.jpg" class="card-img opacity-50" alt="..." style="width: 100%; height: 810px; object-fit: cover">
     <div class="card-img-overlay text-center d-flex align-items-center justify-content-center flex-column">
       <h1 class="card-title fs-1 text-warning">"Karier Hebat Dimulai di Sini"</h1>
       <h3 class="card-text">Mulai peluang karirmu dari sini dengan cara paling ampuh</h3>
@@ -150,11 +152,11 @@ textarea.form-control {
   </div>
 
   <div class="d-flex align-items-center justify-content-center mx-auto" style="margin-top: 50px; width: 100%; ">
-    <div style="width: 70%;" class="ms-5">
+    <div style="width: 70%;" class="ms-5" data-aos="fade-right" data-aos-duration="2000">
         <h2 class="mb-4">Berkomitmen Menjadi Penyedia Tenaga Kerja IT Sementara No. 1 di Indonesia</h2>
         <p>Elitra adalah penyedia lowongan dan tenaga kerja IT di Indonesia Staffing Talenta IT di Indonesia yang fokus pada penyediaan tenaga kerja IT berpengalaman untuk proyek pengembangan perangkat lunak dan transformasi digital. Elitra menawarkan layanan outsourcing talenta IT dengan kontrak jangka pendek mulai dari 3 bulan. Jika Anda membutuhkan informasi lebih lanjut, jangan ragu untuk menghubungi kami. Bersama Elitra, dapatkan talenta IT sementara yang berkualitas serta siap membantu mewujudkan kesuksesan perusahaan Anda.</p>
     </div>
-    <img src="{{ asset('img/buatabout.png') }}" alt="" style="width: 30%; margin-left: 100px" class="me-5">
+    <img src="{{ asset('img/buatabout.png') }}" alt="" style="width: 30%; margin-left: 100px;" class="me-5" data-aos="fade-up" data-aos-duration="2000">
   </div>  
   <div class="ms-5 mt-5">
     <h4 class="fs-2">Outsourcing Tenaga Kerja IT</h4>
@@ -164,7 +166,7 @@ textarea.form-control {
   <div class="row justify-content-center align-items-center">
     <!-- Left Image Column -->
     <div class="col-12 col-md-2">
-      <img src="{{ asset('img/left-image.png') }}" alt="Left Image" style="width: 100%; max-width: 300px; height: 200px; margin-bottom: -100px;">
+      <img src="{{ asset('img/left-image.png') }}" alt="Left Image" style="width: 100%; max-width: 300px; height: 200px; margin-bottom: -100px;" data-aos="fade-down" data-aos-duration="2000">
     </div>
 
     <!-- Main Card Columns -->
@@ -172,7 +174,7 @@ textarea.form-control {
       <div class="row">
         <div class="col-6 col-md-3 d-flex justify-content-center">
           <div class="card" style="width: 100%;">
-            <img src="{{ asset('img/abugaga.jpg') }}" class="card-img-top" alt="...">
+            <img src="{{ asset('img/abugaga.jpg') }}" class="card-img-top" alt="..." >
             <div class="card-body">
               <h3 class="card-title text-center">Web Developer</h3>
               <div class="bg-warning mt-3" style="height: 4px; width: 100%;"></div>
@@ -215,7 +217,7 @@ textarea.form-control {
 
     <!-- Right Image Column -->
     <div class="col-12 col-md-2">
-      <img src="{{ asset('img/right-image.png') }}" alt="Right Image" style="width: 100%; max-width: 300px; height: 200px; margin-top: -200px;">
+      <img src="{{ asset('img/right-image.png') }}" alt="Right Image" style="width: 100%; max-width: 300px; height: 200px; margin-top: -200px;" data-aos="fade-up" data-aos-duration="2000">
     </div>
     
   </div>
@@ -309,12 +311,14 @@ textarea.form-control {
   <div class="container">
     <div class="row">
       <div class="col-6 text-center d-flex flex-column align-items-center justify-content-center mb-4">
-        <h2 class="text-white mt-5">Hubungi Kami</h2>
-        <p class="text-white mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione aut nemo consequatur consequuntur animi expedita ut unde nam debitis, eaque accusamus, minus ipsam blanditiis excepturi odit, quasi saepe officiis velit quam. Saepe voluptatibus dolore recusandae sit reiciendis fugit autem quis, itaque tempore dignissimos rem consequuntur sunt numquam ipsa suscipit! Soluta numquam repellat nihil accusantium laudantium fugit eveniet tempore at neque consequuntur molestias amet voluptate nisi, consectetur nesciunt repudiandae atque voluptatibus.</p>
+        <div class="me-4">
+          <h2 class="text-white mt-5">Hubungi Kami</h2>
+          <p class="text-white mt-3">Perusahaan kami selalu membuka pintu untuk kolaborasi strategis dengan organisasi atau individu yang memiliki visi yang sejalan. Kami percaya bahwa kemitraan adalah kunci untuk mencapai hasil yang luar biasa dan menciptakan dampak yang lebih besar. Dengan fokus pada inovasi, integritas, dan profesionalisme, kami berkomitmen untuk membangun hubungan yang saling menguntungkan dan berkelanjutan. Bergabunglah dengan kami untuk bersama-sama menciptakan solusi yang membawa perubahan positif, memperluas peluang, dan membangun masa depan yang lebih cerah. Kami menyambut setiap kesempatan untuk berbagi pengalaman, sumber daya, dan keahlian untuk menghasilkan hasil yang luar biasa.</p>
+        </div>
       </div>
       <div class="col-6 bg-white rounded-3  pb-2 mt-5">
         <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="0499350d-963f-4205-86aa-7ff3ad059e6b">
+          <input type="hidden" name="access_key" value="dbac2b7d-ddb3-41fe-9e0c-c8465fa68257">
           <p class="mt-2 text-dark">Full Name</p>
           <input type="text" class="form-control" name="name" placeholder="Fathur Rahman">
   
@@ -403,6 +407,11 @@ textarea.form-control {
 
 
       <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+      <script>
+        AOS.init();
+      </script>
       
 
     

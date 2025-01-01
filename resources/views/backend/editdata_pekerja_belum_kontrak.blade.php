@@ -28,22 +28,22 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="text" id="nama" name="nama" class="form-control" required>
+                        <input type="text" value="{{ $pekerja->nama }}" id="nama" name="nama" class="form-control" required>
                     </div>
                     
                     <div class="mb-3">
                         <label for="posisi_keahlian" class="form-label">Posisi Dilamar</label>
-                        <input type="text" id="posisi_keahlian" name="posisi_keahlian" class="form-control" required>
+                        <input type="text" value="{{ $pekerja->posisi_keahlian }}" id="posisi_keahlian" name="posisi_keahlian" class="form-control" required>
                     </div>
     
                     <div class="mb-3">
                         <label for="tanggal_masuk" class="form-label">Tanggal Submit</label>
-                        <input type="date" id="tanggal_masuk" name="tanggal_masuk" class="form-control" required>
+                        <input type="date" value="{{ $pekerja->tanggal_masuk }}" id="tanggal_masuk" name="tanggal_masuk" class="form-control" required>
                     </div>
     
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" value="{{ $pekerja->email }}" id="email" name="email" class="form-control" required>
                     </div>
     
                     <div class="mb-3">

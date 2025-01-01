@@ -24,13 +24,13 @@ class TableController extends Controller
         ->when($queryPekerjaKontrak, function ($query) use ($queryPekerjaKontrak) {
             $query->where('nama', 'like', '%' . $queryPekerjaKontrak . '%')
                   ->orWhere('email', 'like', '%' . $queryPekerjaKontrak . '%');
-        })->paginate(1);
+        })->paginate(5);
     
         $data['data2'] = BelumKontrak::where('status', '!=', 'kontrak')
             ->when($queryPekerjaNonKontrak, function ($query) use ($queryPekerjaNonKontrak) {
                 $query->where('nama', 'like', '%' . $queryPekerjaNonKontrak . '%')
                     ->orWhere('email', 'like', '%' . $queryPekerjaNonKontrak . '%');
-            })->paginate(1);
+            })->paginate(5);
         
         // Hitung jumlah pekerja yang sudah kontrak dan belum kontrak
         // $sudahKontrakCount = SudahKontrak::where('status', 'kontrak')->count();  

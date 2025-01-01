@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeFrontendController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\pendaftarController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PerusahaanController;
 use App\Models\Pendaftar;
 use Illuminate\Auth\Events\Login;
@@ -87,7 +88,6 @@ Route::middleware(['auth'])->group(function () {
     // Content 3
     Route::get('/content3', [pendaftarController::class, 'index'])->name('backend.content3.index');
     Route::patch('/backend/content3/{id}/update-status', [pendaftarController::class, 'updateStatus'])->name('backend.content3.updateStatus');
-    Route::post('/content3/store', [PendaftarController::class, 'store'])->name('backend.content3.store');
     Route::delete('/content3/{id}', [pendaftarController::class, 'destroy'])->name('backend.content3.destroy');
 
     // Content 4
@@ -102,12 +102,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/content5/{nama}', [pendaftarController::class, 'index2'])->name('backend.content5');
 });
 
+Route::post('/laporan/generate', [LaporanController::class, 'generate'])->name('laporan.generate');
+Route::post('/laporan/generate2', [LaporanController::class, 'generate2'])->name('laporan.generate2');
 
 // route khusus frontend
 Route::get('/homefrontend', [HomeFrontendController::class, 'index']) ->name('homefrontend');
 Route::get('/lowonganfrontend', [HomeFrontendController::class, 'lowongan']) ->name('lowonganfrontend');
 Route::get('/aboutusfrontend', [HomeFrontendController::class, 'aboutus']) ->name('aboutusfrontend');
 Route::get('/lowonganfrontend1', [HomeFrontendController::class, 'lowongan1']) ->name('lowonganfrontend1');
+Route::post('/content3/store', [PendaftarController::class, 'store'])->name('backend.content3.store');
 Route::get('/lowonganfrontend2', [HomeFrontendController::class, 'lowongan2']) ->name('lowonganfrontend2');
 Route::get('/lowonganfrontend3', [HomeFrontendController::class, 'lowongan3']) ->name('lowonganfrontend3');
 Route::get('/lowonganfrontend4', [HomeFrontendController::class, 'lowongan4']) ->name('lowonganfrontend4');

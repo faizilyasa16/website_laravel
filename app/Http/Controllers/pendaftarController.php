@@ -14,7 +14,7 @@ class pendaftarController extends Controller
         $data3 = Pendaftar::where('nama', 'LIKE', "%{$query}%") // Cari berdasarkan nama
                     ->orWhere('posisi_dilamar', 'LIKE', "%{$query}%") // Atau posisi yang dilamar
                     ->orWhere('email', 'LIKE', "%{$query}%") // Atau email
-                    ->paginate(1); // Paginate hasil
+                    ->paginate(5); // Paginate hasil
         // Kirim data ke view
         return view('backend.content3', compact('data3'));
     }
@@ -55,7 +55,7 @@ class pendaftarController extends Controller
             'alamat_tinggal' => 'required|string|max:255',
             'jabatan_sebelumnya' => 'required|string|max:255',
             'lama_pengalaman' => 'required|numeric',
-            'gaji_diharapkan' => 'required|numeric|min:1000000|max:100000000',
+            'gaji_diharapkan' => 'required|numeric|max:100000000',
             'cv' => 'required|file|mimes:pdf,docx|max:2048',
             'posisi_dilamar' => 'required|string|max:100',
             'linkedin' => 'nullable|url|max:255',
