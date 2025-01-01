@@ -39,13 +39,13 @@ class TableController extends Controller
         $webDevCount = Pendaftar::where('posisi_dilamar', 'Web Developer')->count();
         $cyberSecurityCount = Pendaftar::where('posisi_dilamar', 'Cyber Security')->count();
         $softwareDevCount = Pendaftar::where('posisi_dilamar', 'Software Developer')->count();
-        $uiUxDesignCount = Pendaftar::where('posisi_dilamar', 'UI UX Design')->count();
+        $uiUxDesignCount = Pendaftar::where('posisi_dilamar', 'UI/UX')->count();
     
         // Hitung jumlah pekerja untuk setiap posisi
         $webDevCount = Pendaftar::where('posisi_dilamar', 'Web Developer')->count();
         $cyberSecurityCount = Pendaftar::where('posisi_dilamar', 'Cyber Security')->count();
         $softwareDevCount = Pendaftar::where('posisi_dilamar', 'Software Developer')->count();
-        $uiUxDesignCount = Pendaftar::where('posisi_dilamar', 'UI UX Design')->count();
+        $uiUxDesignCount = Pendaftar::where('posisi_dilamar', 'UI/UX')->count();
         
         // Hitung total jumlah pekerja dari semua posisi
         $totalPekerja = $webDevCount + $cyberSecurityCount + $softwareDevCount + $uiUxDesignCount;

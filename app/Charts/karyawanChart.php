@@ -15,7 +15,7 @@ class KaryawanChart
     {
         return $this->chart->pieChart()
             ->addData([$webDevCount, $cyberSecurityCount, $softwareDevCount, $uiUxDesignCount]) // Menggunakan data dinamis
-            ->setLabels(['Web Developer', 'Cyber Security', 'Software Developer', 'UI UX Design'])
+            ->setLabels(['Web Developer', 'Cyber Security', 'Software Developer', 'UI/UX'])
             ->setColors(['#1E90FF', '#FF6347', '#FFD700', '#FFC0CB']);// Sesuaikan warna bagian
 
     }

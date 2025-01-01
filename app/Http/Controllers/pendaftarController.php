@@ -102,7 +102,7 @@ class pendaftarController extends Controller
         $pekerja->delete();
     
         // Redirect kembali ke halaman dengan pesan sukses
-        return redirect()->route('backend.content3')->with('success', 'Pekerja berhasil dihapus.');
+        return redirect()->route('backend.content3.index')->with('success', 'Pekerja berhasil dihapus.');
     }
     
     

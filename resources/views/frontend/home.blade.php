@@ -156,7 +156,7 @@ textarea.form-control {
         <h2 class="mb-4">Berkomitmen Menjadi Penyedia Tenaga Kerja IT Sementara No. 1 di Indonesia</h2>
         <p>Elitra adalah penyedia lowongan dan tenaga kerja IT di Indonesia Staffing Talenta IT di Indonesia yang fokus pada penyediaan tenaga kerja IT berpengalaman untuk proyek pengembangan perangkat lunak dan transformasi digital. Elitra menawarkan layanan outsourcing talenta IT dengan kontrak jangka pendek mulai dari 3 bulan. Jika Anda membutuhkan informasi lebih lanjut, jangan ragu untuk menghubungi kami. Bersama Elitra, dapatkan talenta IT sementara yang berkualitas serta siap membantu mewujudkan kesuksesan perusahaan Anda.</p>
     </div>
-    <img src="{{ asset('img/buatabout.png') }}" alt="" style="width: 30%; margin-left: 100px;" class="me-5" data-aos="fade-up" data-aos-duration="2000">
+    <img src="{{ asset('img/buatabout.png') }}" alt="" style="width: 30%; margin-left: 100px;" class="me-5" data-aos="fade-up" data-aos-duration="3000">
   </div>  
   <div class="ms-5 mt-5">
     <h4 class="fs-2">Outsourcing Tenaga Kerja IT</h4>
@@ -217,7 +217,7 @@ textarea.form-control {
 
     <!-- Right Image Column -->
     <div class="col-12 col-md-2">
-      <img src="{{ asset('img/right-image.png') }}" alt="Right Image" style="width: 100%; max-width: 300px; height: 200px; margin-top: -200px;" data-aos="fade-up" data-aos-duration="2000">
+      <img src="{{ asset('img/right-image.png') }}" alt="Right Image" style="width: 100%; max-width: 300px; height: 200px; margin-top: -200px;" data-aos="fade-up" data-aos-duration="3000">
     </div>
     
   </div>
